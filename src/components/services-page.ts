@@ -5,7 +5,7 @@ export function createServicesPage(): string {
       icon: '/assets/images/icons/icon-traffic.svg',
       title: 'הסדרי תנועה',
       subtitle: 'שקט נפשי לפרויקט שלכם, בכל שעות היממה',
-      description: `חברתנו מציעה שירותי הסדרי תנועה מקיפים בפריסה ארצית רחבה, המלווים את שלל סוגי הפרויקטים החל משלבי התכנון והייעוץ הראשוניים ועד לביצוע המדויק בשטח. אנו מעניקים לכם ביטחון מלא ושקט נפשי – הן בזמן העבודה הדינמית והן בשגרה היומיומית של האתר והסדרי התנועה הזמניים, סביב השעון.`,
+      description: `אנחנו מציעים שירותי הסדרי תנועה מקיפים בפריסה ארצית רחבה, המלווים את שלל סוגי הפרויקטים החל משלבי התכנון והייעוץ הראשוניים ועד לביצוע המדויק בשטח. אנחנו מעניקים לכם ביטחון מלא ושקט נפשי – הן בזמן העבודה הדינמית והן בשגרה היומיומית של האתר והסדרי התנועה הזמניים, סביב השעון.`,
       bullets: [
         { title: 'תכנון וייעוץ מקצועי', text: 'ליווי מקצועי והתאמת פתרונות תנועה מול הגורמים הרלוונטיים.' },
         { title: 'ציוד והכוונה בשטח', text: 'פקחי תנועה מוסמכים, עגלות חץ, הצבת גדרות ואמצעי בטיחות שונים.' },
@@ -13,16 +13,14 @@ export function createServicesPage(): string {
         { title: 'עבודות צבע', text: 'סימון וצביעה מקצועית של כבישים ונתיבים, בין אם צביעה זמנית או קבועה.' },
       ],
       closing: 'אנו מחויבים ליצירת סביבה בטוחה ומתוחזקת היטב, המאפשרת תנועה חיה וזורמת ומעבר חופשי ונקי לעוברי האורח בכל רגע נתון.',
-      images: [
-        '/assets/images/services/traffic-management.webp',
-      ],
+      images: ['/assets/images/services/traffic-management.webp'],
     },
     {
       id: 'marking',
       icon: '/assets/images/icons/icon-marking.svg',
       title: 'צביעה וסימון כבישים',
       subtitle: 'גימור ברמה הגבוהה ביותר',
-      description: `חברתנו מבצעת עבודות צביעה וסימון ברמת הגימור הגבוהה ביותר, תוך התחייבות לעבודה מדויקת, אסתטית ויעילה. העבודות מבוצעות תוך שימוש בחומרי צבע איכותיים ועמידים ובציות מלא לתקני הבטיחות והשוק העדכניים. כחלק מהשירות, אנו מציעים ללקוחותינו גם ייעוץ מקצועי מקדים לתכנון אופטימלי של השטח.`,
+      description: `אנחנו מבצעים עבודות צביעה וסימון ברמת הגימור הגבוהה ביותר, תוך התחייבות לעבודה מדויקת, אסתטית ויעילה. העבודות מבוצעות תוך שימוש בחומרי צבע איכותיים ועמידים ובציות מלא לתקני הבטיחות והשוק העדכניים. כחלק מהשירות, אנחנו מציעים לכם גם ייעוץ מקצועי מקדים לתכנון אופטימלי של השטח.`,
       bullets: [
         { title: 'סימון וצביעת כבישים', text: 'סימון נתיבים, מעברי חצייה, חצים והכוונות דרך ברמת נראות גבוהה ובדיוק הנדסי.' },
         { title: 'צביעת שבילי אופניים', text: 'סימון וצביעה ייעודית של שבילי אופניים עירוניים ובין-עירוניים, תוך שימוש בצבעים מונעי החלקה לבטיחות מקסימלית של הרוכבים.' },
@@ -70,9 +68,7 @@ export function createServicesPage(): string {
         { title: 'התקנה מקצועית', text: 'ביצוע עבודות ההתקנה בשטח על ידי צוותים מיומנים ותוך הקפדה יתרה על כללי הבטיחות.' },
       ],
       closing: '',
-      images: [
-        '/assets/images/services/signage.webp',
-      ],
+      images: ['/assets/images/services/signage.webp'],
     },
     {
       id: 'safety',
@@ -89,9 +85,7 @@ export function createServicesPage(): string {
         { title: 'פתרונות בטיחות נוספים', text: 'מגוון אביזרים לתשתיות הכביש ולהולכי הרגל, בהתאמה לצורכי הפרויקט ולתנאי השטח.' },
       ],
       closing: 'אנו שמים דגש על התאמת אביזרי הבטיחות לאופי השימוש ולדרישות הפרויקט, ומספקים ללקוחותינו מעטפת פתרונות המסייעת ביצירת סביבה מסודרת, ברורה ובטוחה יותר לתנועה ולהתנהלות בשטח.',
-      images: [
-        '/assets/images/services/safety-equipment.webp',
-      ],
+      images: ['/assets/images/services/safety-equipment.webp'],
     },
     {
       id: 'light',
@@ -119,7 +113,8 @@ export function createServicesPage(): string {
     `<button
       onclick="scrollToService('${s.id}')"
       class="service-nav-pill"
-      style="white-space:nowrap;padding:0.5rem 1.25rem;border-radius:9999px;font-size:0.875rem;font-weight:600;transition:all 0.2s;border:2px solid #F2521B;color:#F2521B;background:transparent;cursor:pointer;font-family:'Heebo',sans-serif;"
+      aria-label="עבור לשירות: ${s.title}"
+      style="white-space:nowrap;padding:0.5rem 1.25rem;border-radius:9999px;font-size:0.875rem;font-weight:600;transition:all 0.2s;border:2px solid #F2521B;color:#F2521B;background:transparent;cursor:pointer;font-family:'Rubik',sans-serif;"
       onmouseover="if(!this.classList.contains('active-pill')){this.style.background='#F2521B';this.style.color='#fff';}"
       onmouseout="if(!this.classList.contains('active-pill')){this.style.background='transparent';this.style.color='#F2521B';}"
       id="pill-${s.id}"
@@ -127,11 +122,11 @@ export function createServicesPage(): string {
   ).join('');
 
   // Build gallery for each service
-  const buildGallery = (images: string[], serviceId: string) => {
+  const buildGallery = (images: string[], serviceId: string, serviceTitle: string) => {
     if (images.length === 1) {
       return `
         <div style="border-radius:16px;overflow:hidden;height:420px;">
-          <img src="${images[0]}" alt="" style="width:100%;height:100%;object-fit:cover;display:block;" />
+          <img src="${images[0]}" alt="" aria-hidden="true" style="width:100%;height:100%;object-fit:cover;display:block;" />
         </div>`;
     }
 
@@ -141,47 +136,49 @@ export function createServicesPage(): string {
       `<button
         onclick="galleryGoTo('${serviceId}',${idx})"
         id="dot-${serviceId}-${idx}"
+        aria-label="הצג תמונה ${idx + 1} מתוך ${total} — ${serviceTitle}"
         style="width:8px;height:8px;border-radius:50%;border:none;cursor:pointer;padding:0;transition:all 0.3s;background:${idx === 0 ? '#F2521B' : 'rgba(255,255,255,0.5)'};"
       ></button>`
     ).join('');
 
-    // כל תמונה שכבה אחת מעל השנייה, מוצגת עם opacity + z-index
     const slides = images.map((src, idx) =>
-      `<div id="slide-${serviceId}-${idx}" style="position:absolute;inset:0;opacity:${idx === 0 ? '1' : '0'};z-index:${idx === 0 ? '1' : '0'};transition:opacity 0.5s ease;pointer-events:none;">
-        <img src="${src}" alt="" style="width:100%;height:100%;object-fit:cover;display:block;" />
+      `<div id="slide-${serviceId}-${idx}" style="position:absolute;inset:0;opacity:${idx === 0 ? '1' : '0'};z-index:${idx === 0 ? '1' : '0'};transition:opacity 0.5s ease;pointer-events:none;" aria-hidden="true">
+        <img src="${src}" alt="" aria-hidden="true" style="width:100%;height:100%;object-fit:cover;display:block;" />
       </div>`
     ).join('');
 
     return `
-      <div style="border-radius:16px;overflow:hidden;position:relative;height:420px;">
+      <div style="border-radius:16px;overflow:hidden;position:relative;height:420px;" role="region" aria-label="גלריית תמונות — ${serviceTitle}">
 
         ${slides}
 
         <!-- כפתור שמאל (הקודם) -->
         <button
           onclick="galleryGoTo('${serviceId}', (window._galleryIdx['${serviceId}']||0) - 1)"
+          aria-label="תמונה קודמת — ${serviceTitle}"
           style="position:absolute;left:12px;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;background:rgba(0,0,0,0.45);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(4px);transition:background 0.2s;z-index:10;"
           onmouseover="this.style.background='rgba(242,82,27,0.85)'"
           onmouseout="this.style.background='rgba(0,0,0,0.45)'">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M15 18l-6-6 6-6"/></svg>
         </button>
 
         <!-- כפתור ימין (הבא) -->
         <button
           onclick="galleryGoTo('${serviceId}', (window._galleryIdx['${serviceId}']||0) + 1)"
+          aria-label="תמונה הבאה — ${serviceTitle}"
           style="position:absolute;right:12px;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;background:rgba(0,0,0,0.45);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(4px);transition:background 0.2s;z-index:10;"
           onmouseover="this.style.background='rgba(242,82,27,0.85)'"
           onmouseout="this.style.background='rgba(0,0,0,0.45)'">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M9 18l6-6-6-6"/></svg>
         </button>
 
         <!-- מונה -->
-        <div style="position:absolute;top:12px;right:12px;background:rgba(0,0,0,0.5);color:white;font-size:0.75rem;font-family:'Heebo',sans-serif;padding:0.2rem 0.6rem;border-radius:20px;backdrop-filter:blur(4px);z-index:10;" id="gallery-counter-${serviceId}">
+        <div style="position:absolute;top:12px;right:12px;background:rgba(0,0,0,0.5);color:white;font-size:0.75rem;font-family:'Rubik',sans-serif;padding:0.2rem 0.6rem;border-radius:20px;backdrop-filter:blur(4px);z-index:10;" id="gallery-counter-${serviceId}" aria-live="polite" aria-atomic="true">
           1 / ${total}
         </div>
 
         <!-- נקודות -->
-        <div style="position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:10;">
+        <div style="position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:10;" role="group" aria-label="ניווט בין תמונות — ${serviceTitle}">
           ${dots}
         </div>
 
@@ -194,7 +191,7 @@ export function createServicesPage(): string {
 
     const bulletItems = s.bullets.map(b =>
       `<li style="display:flex;gap:0.75rem;align-items:flex-start;margin-bottom:0.75rem;">
-        <span style="color:#F2521B;font-size:1.1rem;margin-top:0.1rem;flex-shrink:0;">◆</span>
+        <span style="color:#F2521B;font-size:1.1rem;margin-top:0.1rem;flex-shrink:0;" aria-hidden="true">◆</span>
         <span><strong style="color:#272424;">${b.title}:</strong> ${b.text}</span>
       </li>`
     ).join('');
@@ -202,10 +199,10 @@ export function createServicesPage(): string {
     const textBlock = `
       <div style="display:flex;flex-direction:column;justify-content:center;gap:1.5rem;">
         <div style="display:flex;align-items:center;gap:1rem;">
-          <img src="${s.icon}" alt="${s.title}" style="width:48px;height:48px;filter:invert(42%) sepia(93%) saturate(1352%) hue-rotate(350deg) brightness(95%) contrast(91%);" onerror="this.style.display='none'">
+          <img src="${s.icon}" alt="" aria-hidden="true" style="width:48px;height:48px;filter:invert(42%) sepia(93%) saturate(1352%) hue-rotate(350deg) brightness(95%) contrast(91%);" onerror="this.style.display='none'">
           <div>
-            <p style="color:#F2521B;font-size:0.85rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin:0 0 0.25rem;">${String(i + 1).padStart(2,'0')}</p>
-            <h2 style="font-family:'Heebo',sans-serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;color:#272424;margin:0;line-height:1.2;">${s.title}</h2>
+            <p style="color:#F2521B;font-size:0.85rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin:0 0 0.25rem;" aria-hidden="true">${String(i + 1).padStart(2,'0')}</p>
+            <h2 style="font-family:'Rubik',sans-serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;color:#272424;margin:0;line-height:1.2;">${s.title}</h2>
           </div>
         </div>
         <p style="font-size:1rem;font-weight:600;color:#F2521B;margin:0;">${s.subtitle}</p>
@@ -214,17 +211,32 @@ export function createServicesPage(): string {
           ${bulletItems}
         </ul>
         ${s.closing ? `<p style="color:#555;line-height:1.75;margin:0;font-style:italic;">${s.closing}</p>` : ''}
-        <div>
+        <div style="display:flex;flex-wrap:wrap;gap:0.75rem;align-items:center;">
           <a href="/contact.html" style="display:inline-block;background:#F2521B;color:#fff;padding:0.75rem 2rem;border-radius:6px;text-decoration:none;font-weight:700;font-size:0.95rem;transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
             לפרטים נוספים וצור קשר
           </a>
+          ${s.id === 'marking' ? `
+          <a href="/marking.html" style="display:inline-flex;align-items:center;gap:0.5rem;background:transparent;color:#F2521B;padding:0.75rem 1.5rem;border-radius:6px;text-decoration:none;font-weight:700;font-size:0.95rem;border:2px solid #F2521B;transition:all 0.2s;" onmouseover="this.style.background='#F2521B';this.style.color='#fff';" onmouseout="this.style.background='transparent';this.style.color='#F2521B';">
+            לכל סוגי עבודות הצבע
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M15 18l-6-6 6-6"/></svg>
+          </a>` : ''}
+          ${s.id === 'signage' ? `
+          <a href="/signage-catalog.html" style="display:inline-flex;align-items:center;gap:0.5rem;background:transparent;color:#F2521B;padding:0.75rem 1.5rem;border-radius:6px;text-decoration:none;font-weight:700;font-size:0.95rem;border:2px solid #F2521B;transition:all 0.2s;" onmouseover="this.style.background='#F2521B';this.style.color='#fff';" onmouseout="this.style.background='transparent';this.style.color='#F2521B';">
+            לקטלוג השילוט והתמרורים
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M15 18l-6-6 6-6"/></svg>
+          </a>` : ''}
+          ${s.id === 'safety' ? `
+          <a href="/safety-catalog.html" style="display:inline-flex;align-items:center;gap:0.5rem;background:transparent;color:#F2521B;padding:0.75rem 1.5rem;border-radius:6px;text-decoration:none;font-weight:700;font-size:0.95rem;border:2px solid #F2521B;transition:all 0.2s;" onmouseover="this.style.background='#F2521B';this.style.color='#fff';" onmouseout="this.style.background='transparent';this.style.color='#F2521B';">
+            לקטלוג אביזרי הבטיחות
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M15 18l-6-6 6-6"/></svg>
+          </a>` : ''}
         </div>
       </div>`;
 
-    const galleryBlock = buildGallery(s.images, s.id);
+    const galleryBlock = buildGallery(s.images, s.id, s.title);
 
     return `
-      <section id="service-${s.id}" style="padding:5rem 0;border-bottom:1px solid #f0f0f0;">
+      <section id="service-${s.id}" aria-label="${s.title}" style="padding:5rem 0;border-bottom:1px solid #f0f0f0;">
         <div style="max-width:1200px;margin:0 auto;padding:0 2rem;">
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;">
             ${isEven
@@ -238,19 +250,19 @@ export function createServicesPage(): string {
 
   return `
     <!-- HERO -->
-    <section style="background:#272424;padding:6rem 2rem 4rem;text-align:center;">
+    <section id="main-content" aria-label="השירותים שלנו" style="background:#272424;padding:6rem 2rem 4rem;text-align:center;">
       <div style="max-width:800px;margin:0 auto;">
-        <p style="color:#F2521B;font-size:0.9rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1rem;">השירותים שלנו</p>
-        <h1 style="font-family:'Heebo',sans-serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:900;color:#fff;margin:0 0 1.5rem;line-height:1.15;">
+        <p style="color:#F2521B;font-size:0.9rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1rem;" aria-hidden="true">השירותים שלנו</p>
+        <h1 style="font-family:'Rubik',sans-serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:900;color:#fff;margin:0 0 1.5rem;line-height:1.15;">
           פתרונות מקצועיים לכל<br>
           <span style="color:#F2521B;">צורכי הדרך והתשתית</span>
         </h1>
         <p style="color:rgba(255,255,255,0.7);font-size:1.1rem;line-height:1.75;margin:0 0 2.5rem;">
           א.ס הסדרי תנועה מציעה מגוון שירותים מקצועיים – מהסדרי תנועה ופקחים מוסמכים ועד לשילוט, צביעה ואביזרי בטיחות – הכל תחת קורת גג אחת.
         </p>
-        <div style="display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:center;">
+        <nav aria-label="ניווט מהיר לפי שירות" style="display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:center;">
           ${navPills}
-        </div>
+        </nav>
       </div>
     </section>
 
@@ -258,9 +270,9 @@ export function createServicesPage(): string {
     ${serviceBlocks}
 
     <!-- CTA -->
-    <section style="background:#F2521B;padding:5rem 2rem;text-align:center;">
+    <section aria-label="צרו קשר" style="background:#F2521B;padding:5rem 2rem;text-align:center;">
       <div style="max-width:700px;margin:0 auto;">
-        <h2 style="font-family:'Heebo',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:#fff;margin:0 0 1rem;line-height:1.2;">
+        <h2 style="font-family:'Rubik',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:#fff;margin:0 0 1rem;line-height:1.2;">
           מחפשים שותף מקצועי לפרויקט?
         </h2>
         <p style="color:rgba(255,255,255,0.85);font-size:1.1rem;line-height:1.75;margin:0 0 2rem;">
@@ -277,7 +289,6 @@ export function createServicesPage(): string {
 }
 
 export function initServicesPage(): void {
-  // Gallery state
   const galleryCounts: Record<string, number> = {
     traffic: 1,
     marking: 6,
@@ -287,23 +298,21 @@ export function initServicesPage(): void {
     light: 4,
   };
 
-  window._galleryIdx = window._galleryIdx || {};
+  (window as any)._galleryIdx = (window as any)._galleryIdx || {};
 
   Object.keys(galleryCounts).forEach(id => {
-    window._galleryIdx[id] = 0;
+    (window as any)._galleryIdx[id] = 0;
   });
 
   (window as any).galleryGoTo = (id: string, idx: number) => {
     const total = galleryCounts[id];
     if (!total || total <= 1) return;
 
-    // wrap around
     if (idx < 0) idx = total - 1;
     if (idx >= total) idx = 0;
 
-    window._galleryIdx[id] = idx;
+    (window as any)._galleryIdx[id] = idx;
 
-    // update ALL slides — no prev tracking, no race conditions
     for (let i = 0; i < total; i++) {
       const slide = document.getElementById(`slide-${id}-${i}`);
       if (slide) {
@@ -318,15 +327,19 @@ export function initServicesPage(): void {
     if (counter) counter.textContent = `${idx + 1} / ${total}`;
   };
 
-  // Auto-advance galleries that have multiple images
-  Object.entries(galleryCounts).forEach(([id, total]) => {
-    if (total > 1) {
-      setInterval(() => {
-        const current = window._galleryIdx[id] || 0;
-        (window as any).galleryGoTo(id, current + 1);
-      }, 4000);
-    }
-  });
+  // Auto-advance: respect prefers-reduced-motion
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!prefersReducedMotion) {
+    Object.entries(galleryCounts).forEach(([id, total]) => {
+      if (total > 1) {
+        setInterval(() => {
+          const current = (window as any)._galleryIdx[id] || 0;
+          (window as any).galleryGoTo(id, current + 1);
+        }, 4000);
+      }
+    });
+  }
 
   // Scroll to service section
   (window as any).scrollToService = (id: string) => {
