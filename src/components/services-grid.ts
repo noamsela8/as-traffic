@@ -1,5 +1,6 @@
 export function createServicesGrid(): string {
     return `
+      <style>.services-grid-wrap{grid-template-columns:repeat(2,1fr)!important}.services-card{height:160px!important}@media(min-width:640px){.services-grid-wrap{grid-template-columns:repeat(3,1fr)!important}.services-card{height:220px!important}}</style>
       <section aria-label="מגוון שירותים מקצועיים" style="background:#f5f5f5;padding:5rem 0;">
         <div style="max-width:80rem;margin:0 auto;padding:0 1.5rem;">
 
@@ -11,10 +12,10 @@ export function createServicesGrid(): string {
           </div>
 
           <!-- 6 כרטיסיות שוות -->
-          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;">
+          <div style="display:grid;gap:0.75rem;" class="services-grid-wrap"">
 
             <a href="/services.html" style="text-decoration:none;">
-              <div style="border-radius:12px;overflow:hidden;height:220px;position:relative;cursor:pointer;transition:transform 0.3s,box-shadow 0.3s;"
+              <div style="border-radius:12px;overflow:hidden;position:relative;cursor:pointer;transition:transform 0.3s,box-shadow 0.3s;" class="services-card"
                 onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 20px 40px rgba(0,0,0,0.25)'"
                 onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
                 <img src="/assets/images/services/traffic-management.webp" alt="הסדרי תנועה" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
@@ -29,7 +30,7 @@ export function createServicesGrid(): string {
             </a>
 
             <a href="/services.html" style="text-decoration:none;">
-              <div style="border-radius:12px;overflow:hidden;height:220px;position:relative;cursor:pointer;transition:transform 0.3s,box-shadow 0.3s;"
+              <div style="border-radius:12px;overflow:hidden;position:relative;cursor:pointer;transition:transform 0.3s,box-shadow 0.3s;" class="services-card"
                 onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 20px 40px rgba(0,0,0,0.25)'"
                 onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
                 <img src="/assets/images/services/traffic-inspectors.webp" alt="פקחי תנועה" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
@@ -44,7 +45,7 @@ export function createServicesGrid(): string {
             </a>
 
             <a href="/services.html" style="text-decoration:none;">
-              <div style="border-radius:12px;overflow:hidden;height:220px;position:relative;cursor:pointer;transition:transform 0.3s,box-shadow 0.3s;"
+              <div style="border-radius:12px;overflow:hidden;position:relative;cursor:pointer;transition:transform 0.3s,box-shadow 0.3s;" class="services-card"
                 onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 20px 40px rgba(0,0,0,0.25)'"
                 onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
                 <img src="/assets/images/services/road-marking.webp" alt="צביעה וסימון" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
@@ -59,7 +60,7 @@ export function createServicesGrid(): string {
             </a>
 
             <a href="/services.html" style="text-decoration:none;">
-              <div style="border-radius:12px;overflow:hidden;height:220px;position:relative;cursor:pointer;transition:transform 0.3s,box-shadow 0.3s;"
+              <div style="border-radius:12px;overflow:hidden;position:relative;cursor:pointer;transition:transform 0.3s,box-shadow 0.3s;" class="services-card"
                 onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 20px 40px rgba(0,0,0,0.25)'"
                 onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
                 <img src="/assets/images/services/signage.webp" alt="שילוט ותמרור" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
@@ -74,7 +75,7 @@ export function createServicesGrid(): string {
             </a>
 
             <a href="/services.html" style="text-decoration:none;">
-              <div style="border-radius:12px;overflow:hidden;height:220px;position:relative;cursor:pointer;transition:transform 0.3s,box-shadow 0.3s;"
+              <div style="border-radius:12px;overflow:hidden;position:relative;cursor:pointer;transition:transform 0.3s,box-shadow 0.3s;" class="services-card"
                 onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 20px 40px rgba(0,0,0,0.25)'"
                 onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
                 <img src="/assets/images/services/safety-equipment.webp" alt="אביזרי בטיחות" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
@@ -89,7 +90,7 @@ export function createServicesGrid(): string {
             </a>
 
             <a href="/services.html" style="text-decoration:none;">
-              <div style="border-radius:12px;overflow:hidden;height:220px;position:relative;cursor:pointer;transition:transform 0.3s,box-shadow 0.3s;"
+              <div style="border-radius:12px;overflow:hidden;position:relative;cursor:pointer;transition:transform 0.3s,box-shadow 0.3s;" class="services-card"
                 onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 20px 40px rgba(0,0,0,0.25)'"
                 onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
                 <img src="/assets/images/services/lighting.webp" alt="תאורה" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
