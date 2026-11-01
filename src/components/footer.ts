@@ -16,7 +16,7 @@ export function createFooter(): string {
         <div style="height: 4px; background-color: #F2521B;" role="presentation"></div>
 
         <div style="max-width: 80rem; margin: 0 auto; padding: 4rem 1.5rem;">
-          <div style="display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: start;" class="footer-grid">
+          <div style="display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: start;" class="footer-grid"">
 
             <!-- לוגו -->
             <div class="footer-logo-wrap">
@@ -91,11 +91,13 @@ export function createFooter(): string {
               </nav>
             </div>
 
+
+
           </div>
         </div>
 
         <div style="border-top: 1px solid rgba(255,255,255,0.1);">
-          <div style="max-width: 80rem; margin: 0 auto; padding: 1.5rem; display: flex; gap: 0.75rem;" class="footer-bottom-nav">
+          <div style="max-width: 80rem; margin: 0 auto; padding: 1.5rem; display: flex; flex-direction: column; align-items: center; gap: 0.75rem;" class="footer-bottom-nav"">
             <p style="color: rgba(255,255,255,0.55); font-size: 0.75rem;">
               <small>© 2025 א.ס הסדרי תנועה בע"מ · כל הזכויות שמורות</small>
             </p>
