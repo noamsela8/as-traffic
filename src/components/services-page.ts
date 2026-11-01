@@ -238,7 +238,7 @@ export function createServicesPage(): string {
     return `
       <section id="service-${s.id}" aria-label="${s.title}" style="padding:5rem 0;border-bottom:1px solid #f0f0f0;">
         <div style="max-width:1200px;margin:0 auto;padding:0 2rem;">
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;">
+          <div class="svc-block-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;">
             ${isEven
               ? `<div>${textBlock}</div><div>${galleryBlock}</div>`
               : `<div>${galleryBlock}</div><div>${textBlock}</div>`
@@ -249,6 +249,12 @@ export function createServicesPage(): string {
   }).join('');
 
   return `
+
+    <style>
+@media(max-width:767px){
+  .svc-block-grid{grid-template-columns:1fr!important;gap:2rem!important}
+}
+</style>
     <!-- HERO -->
     <section id="main-content" aria-label="השירותים שלנו" style="background:#272424;padding:6rem 2rem 4rem;text-align:center;">
       <div style="max-width:800px;margin:0 auto;">

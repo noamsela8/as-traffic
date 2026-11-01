@@ -1,5 +1,10 @@
 export function createProductsPage(): string {
   return `
+    <style>
+@media(max-width:767px){
+  .products-grid{grid-template-columns:1fr!important;gap:1.25rem!important}
+}
+</style>
     <!-- HERO -->
     <section id="main-content" aria-label="המוצרים שלנו" style="background:#272424;padding:6rem 2rem 4rem;text-align:center;">
       <div style="max-width:700px;margin:0 auto;">
@@ -17,7 +22,7 @@ export function createProductsPage(): string {
     <!-- CATALOG CARDS -->
     <section aria-label="קטלוגי מוצרים" style="background:#f9f9f9;padding:5rem 2rem;">
       <div style="max-width:1000px;margin:0 auto;">
-        <div class="products-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;">
+        <div class="products-grid" style="display:grid;gap:2rem;" class="products-grid" style="grid-template-columns:1fr 1fr">
 
           <!-- כרטיס אביזרי בטיחות -->
           <a href="/safety-catalog.html" aria-label="קטלוג אביזרי בטיחות — לחצו לצפייה" style="text-decoration:none;" class="catalog-card-link">

@@ -1,5 +1,16 @@
 export function createAboutPage(): string {
   return `
+<style>
+@media(max-width:767px){
+  .about-main-grid{grid-template-columns:1fr!important;gap:3rem!important}
+  .about-stats-grid{grid-template-columns:1fr 1fr!important}
+  .about-team-grid{grid-template-columns:1fr 1fr!important;gap:1rem!important}
+}
+@media(max-width:480px){
+  .about-stats-grid{grid-template-columns:1fr!important}
+  .about-team-grid{grid-template-columns:1fr!important}
+}
+</style>
 
     <!-- מי אנחנו -->
     <section style="background:white;padding:8rem 0 5rem;">
@@ -87,7 +98,7 @@ export function createAboutPage(): string {
 
     <!-- ניסיון ויכולות -->
     <section style="background:white;padding:6rem 0;">
-      <div style="max-width:80rem;margin:0 auto;padding:0 1.5rem;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;">
+      <div style="max-width:80rem;margin:0 auto;padding:0 1.5rem;display:grid;gap:6rem;align-items:center;" class="about-main-grid" style="grid-template-columns:1fr 1fr">
 
         <div>
           <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem;">
@@ -104,7 +115,7 @@ export function createAboutPage(): string {
             הניסיון, האמינות והמחויבות שלנו הם הבסיס לכל עבודה שאנחנו עושים.
           </p>
 
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2.5rem;">
+          <div style="display:grid;gap:1rem;margin-top:2.5rem;" class="about-stats-grid" style="grid-template-columns:1fr 1fr">
             <div style="border-right:3px solid #F2521B;padding-right:1rem;">
               <div style="font-family:'Rubik',sans-serif;font-size:2.2rem;font-weight:900;color:#272424;line-height:1;">25+</div>
               <div style="font-size:0.85rem;color:#7a7a7a;margin-top:0.25rem;">שנות ניסיון</div>
@@ -143,7 +154,7 @@ export function createAboutPage(): string {
             הערכים שמובילים אותנו
           </h2>
         </div>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;">
+        <div style="display:grid;gap:1.5rem;" class="about-team-grid" style="grid-template-columns:repeat(3,1fr)">
 
           <div style="background:white;border:1px solid #e8e8e8;padding:2.5rem 2rem;position:relative;overflow:hidden;transition:box-shadow 0.3s,transform 0.3s;"
             onmouseover="this.style.boxShadow='0 12px 40px rgba(0,0,0,0.10)';this.style.transform='translateY(-4px)'"
