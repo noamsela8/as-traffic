@@ -1,50 +1,28 @@
 export function createFooter(): string {
     return `
       <style>
+.footer-logo-wrap{text-align:center}
+.footer-logo-wrap img{max-width:180px!important}
 @media(min-width:768px){
   .footer-grid{grid-template-columns:1.4fr 1fr 1fr 1fr!important;gap:3rem!important}
-  .footer-bottom-nav{flex-direction:row!important}
+  .footer-logo-wrap{text-align:right}
+  .footer-logo-wrap img{max-width:260px!important}
+  .footer-bottom-nav{flex-direction:row!important;align-items:center!important}
 }
-.footer-bottom-nav{flex-direction:column;gap:0.5rem}
+.footer-bottom-nav{flex-direction:column;gap:0.5rem;align-items:center}
 </style>
       <footer role="contentinfo" style="background-color: #272424; color: white;">
 
         <div style="height: 4px; background-color: #F2521B;" role="presentation"></div>
 
         <div style="max-width: 80rem; margin: 0 auto; padding: 4rem 1.5rem;">
-          <div style="display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: start;" class="footer-grid"">
+          <div style="display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: start;" class="footer-grid">
 
             <!-- לוגו -->
-            <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+            <div class="footer-logo-wrap">
               <a href="/" aria-label="א.ס הסדרי תנועה - עמוד הבית">
-                <img src="/assets/images/logo.svg" alt="א.ס הסדרי תנועה" style="width: 100%; max-width: 260px; height: auto;" />
+                <img src="/assets/images/logo.svg" alt="א.ס הסדרי תנועה" style="height: auto;" />
               </a>
-            </div>
-
-            <!-- ניווט מהיר -->
-            <div style="display: flex; flex-direction: column; gap: 1rem;">
-              <h2 style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: white; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.75rem;">
-                ניווט מהיר
-              </h2>
-              <nav aria-label="ניווט מהיר" style="display: flex; flex-direction: column; gap: 0.5rem;">
-                <a href="/about.html" style="color:rgba(255,255,255,0.6);font-size:0.875rem;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#F2521B'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">אודות החברה</a>
-                <a href="/services.html" style="color:rgba(255,255,255,0.6);font-size:0.875rem;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#F2521B'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">השירותים שלנו</a>
-                <a href="/careers.html" style="color:rgba(255,255,255,0.6);font-size:0.875rem;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#F2521B'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">דרושים</a>
-                <a href="/contact.html" style="color:rgba(255,255,255,0.6);font-size:0.875rem;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#F2521B'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">צור קשר</a>
-              </nav>
-            </div>
-
-            <!-- קישורים נוספים -->
-            <div style="display: flex; flex-direction: column; gap: 1rem;">
-              <h2 style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: white; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.75rem;">
-                קישורים נוספים
-              </h2>
-              <nav aria-label="קישורים נוספים" style="display: flex; flex-direction: column; gap: 0.5rem;">
-                <a href="/privacy.html" style="color:rgba(255,255,255,0.6);font-size:0.875rem;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#F2521B'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">מדיניות פרטיות</a>
-                <a href="/accessibility.html" style="color:rgba(255,255,255,0.6);font-size:0.875rem;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#F2521B'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">הצהרת נגישות</a>
-                <a href="/terms.html" style="color:rgba(255,255,255,0.6);font-size:0.875rem;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#F2521B'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">תנאי שימוש</a>
-                <a href="/sitemap.html" style="color:rgba(255,255,255,0.6);font-size:0.875rem;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#F2521B'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">מפת אתר</a>
-              </nav>
             </div>
 
             <!-- צור קשר -->
@@ -87,11 +65,37 @@ export function createFooter(): string {
               </address>
             </div>
 
+            <!-- ניווט מהיר -->
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+              <h2 style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: white; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.75rem;">
+                ניווט מהיר
+              </h2>
+              <nav aria-label="ניווט מהיר" style="display: flex; flex-direction: column; gap: 0.5rem;">
+                <a href="/about.html" style="color:rgba(255,255,255,0.6);font-size:0.875rem;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#F2521B'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">אודות החברה</a>
+                <a href="/services.html" style="color:rgba(255,255,255,0.6);font-size:0.875rem;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#F2521B'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">השירותים שלנו</a>
+                <a href="/careers.html" style="color:rgba(255,255,255,0.6);font-size:0.875rem;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#F2521B'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">דרושים</a>
+                <a href="/contact.html" style="color:rgba(255,255,255,0.6);font-size:0.875rem;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#F2521B'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">צור קשר</a>
+              </nav>
+            </div>
+
+            <!-- קישורים נוספים -->
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+              <h2 style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: white; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.75rem;">
+                קישורים נוספים
+              </h2>
+              <nav aria-label="קישורים נוספים" style="display: flex; flex-direction: column; gap: 0.5rem;">
+                <a href="/privacy.html" style="color:rgba(255,255,255,0.6);font-size:0.875rem;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#F2521B'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">מדיניות פרטיות</a>
+                <a href="/accessibility.html" style="color:rgba(255,255,255,0.6);font-size:0.875rem;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#F2521B'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">הצהרת נגישות</a>
+                <a href="/terms.html" style="color:rgba(255,255,255,0.6);font-size:0.875rem;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#F2521B'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">תנאי שימוש</a>
+                <a href="/sitemap.html" style="color:rgba(255,255,255,0.6);font-size:0.875rem;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#F2521B'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">מפת אתר</a>
+              </nav>
+            </div>
+
           </div>
         </div>
 
         <div style="border-top: 1px solid rgba(255,255,255,0.1);">
-          <div style="max-width: 80rem; margin: 0 auto; padding: 1.5rem; display: flex; flex-direction: column; align-items: center; gap: 0.75rem;" class="footer-bottom-nav"">
+          <div style="max-width: 80rem; margin: 0 auto; padding: 1.5rem; display: flex; gap: 0.75rem;" class="footer-bottom-nav">
             <p style="color: rgba(255,255,255,0.55); font-size: 0.75rem;">
               <small>© 2025 א.ס הסדרי תנועה בע"מ · כל הזכויות שמורות</small>
             </p>
