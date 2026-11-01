@@ -1,11 +1,11 @@
 export function createFooter(): string {
     return `
       <style>
-.footer-logo-wrap{text-align:center}
+.footer-logo-wrap{display:flex;justify-content:center}
 .footer-logo-wrap img{max-width:180px!important}
 @media(min-width:768px){
   .footer-grid{grid-template-columns:1.4fr 1fr 1fr 1fr!important;gap:3rem!important}
-  .footer-logo-wrap{text-align:right}
+  .footer-logo-wrap{display:block;text-align:right}
   .footer-logo-wrap img{max-width:260px!important}
   .footer-bottom-nav{flex-direction:row!important;align-items:center!important}
 }
