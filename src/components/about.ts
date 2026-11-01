@@ -49,7 +49,6 @@ export function createAbout(): string {
             onmouseover="this.style.borderColor='#F2521B'"
             onmouseout="this.style.borderColor='transparent'">
             <div style="display:flex;justify-content:center;margin-bottom:1rem;"><img src="/assets/images/icons/about-icon-safety.svg" alt="בטיחות" class="about-icon" /></div>
-            <h3 style="font-family:'Rubik',sans-serif;font-size:0.9rem;font-weight:700;color:#272424;margin-bottom:0.5rem;">בטיחות</h3>
             <p style="font-size:0.8rem;color:#595959;line-height:1.6;">עמידה מוחלטת בתקני הבטיחות הגבוהים ביותר.</p>
           </div>
 
@@ -57,7 +56,6 @@ export function createAbout(): string {
             onmouseover="this.style.borderColor='#F2521B'"
             onmouseout="this.style.borderColor='transparent'">
             <div style="display:flex;justify-content:center;margin-bottom:1rem;"><img src="/assets/images/icons/about-icon-professional.svg" alt="מקצועיות" class="about-icon" /></div>
-            <h3 style="font-family:'Rubik',sans-serif;font-size:0.9rem;font-weight:700;color:#272424;margin-bottom:0.5rem;">מקצועיות</h3>
             <p style="font-size:0.8rem;color:#595959;line-height:1.6;">צוותים מיומנים ומוסמכים עם ניסיון רב.</p>
           </div>
 
@@ -65,7 +63,6 @@ export function createAbout(): string {
             onmouseover="this.style.borderColor='#F2521B'"
             onmouseout="this.style.borderColor='transparent'">
             <div style="display:flex;justify-content:center;margin-bottom:1rem;"><img src="/assets/images/icons/about-icon-standards.svg" alt="עמידה בתקנים" class="about-icon" /></div>
-            <h3 style="font-family:'Rubik',sans-serif;font-size:0.9rem;font-weight:700;color:#272424;margin-bottom:0.5rem;">עמידה בתקנים</h3>
             <p style="font-size:0.8rem;color:#595959;line-height:1.6;">פעילות בהתאם לתקנים המקצועיים ותקנות מע"צ.</p>
           </div>
 
@@ -73,7 +70,6 @@ export function createAbout(): string {
             onmouseover="this.style.borderColor='#F2521B'"
             onmouseout="this.style.borderColor='transparent'">
             <div style="display:flex;justify-content:center;margin-bottom:1rem;"><img src="/assets/images/icons/about-icon-efficiency.svg" alt="יעילות" class="about-icon" /></div>
-            <h3 style="font-family:'Rubik',sans-serif;font-size:0.9rem;font-weight:700;color:#272424;margin-bottom:0.5rem;">יעילות</h3>
             <p style="font-size:0.8rem;color:#595959;line-height:1.6;">ביצוע מהיר ומדויק עם מינימום הפרעה לתנועה.</p>
           </div>
 
