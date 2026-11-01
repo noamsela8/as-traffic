@@ -22,7 +22,7 @@ export function createProductsPage(): string {
     <!-- CATALOG CARDS -->
     <section aria-label="קטלוגי מוצרים" style="background:#f9f9f9;padding:5rem 2rem;">
       <div style="max-width:1000px;margin:0 auto;">
-        <div class="products-grid" style="display:grid;gap:2rem;" class="products-grid" style="grid-template-columns:1fr 1fr">
+        <div class="products-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;">
 
           <!-- כרטיס אביזרי בטיחות -->
           <a href="/safety-catalog.html" aria-label="קטלוג אביזרי בטיחות — לחצו לצפייה" style="text-decoration:none;" class="catalog-card-link">

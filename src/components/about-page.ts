@@ -28,11 +28,8 @@ export function createAboutPage(): string {
         </div>
 
         <!-- תמונה -->
-        <div style="max-width:1000px;margin:0 auto 7rem;background:#f5f5f5;border-radius:8px;aspect-ratio:16/6;display:flex;align-items:center;justify-content:center;border:2px dashed #e8e8e8;">
-          <div style="text-align:center;color:#bbb;">
-            <div style="font-size:3rem;margin-bottom:0.5rem;">📸</div>
-            <p style="font-family:'Rubik',sans-serif;font-size:0.875rem;">תמונה תתווסף בקרוב</p>
-          </div>
+        <div style="max-width:1000px;margin:0 auto 7rem;border-radius:8px;overflow:hidden;aspect-ratio:16/6;">
+          <img src="/assets/images/about-hero.webp" alt="צוות א.ס הסדרי תנועה בפעולה בשטח" style="width:100%;height:100%;object-fit:cover;display:block;">
         </div>
 
       </div>
@@ -132,11 +129,8 @@ export function createAboutPage(): string {
         </div>
 
         <!-- תמונה -->
-        <div style="background:#f5f5f5;border-radius:8px;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;border:2px dashed #e8e8e8;">
-          <div style="text-align:center;color:#bbb;">
-            <div style="font-size:3rem;margin-bottom:0.5rem;">📸</div>
-            <p style="font-family:'Rubik',sans-serif;font-size:0.875rem;">תמונה תתווסף בקרוב</p>
-          </div>
+        <div style="border-radius:8px;overflow:hidden;aspect-ratio:4/3;">
+          <img src="/assets/images/about-secondary.webp" alt="עבודות הסדרי תנועה בפרויקט תשתית" style="width:100%;height:100%;object-fit:cover;display:block;">
         </div>
 
       </div>
