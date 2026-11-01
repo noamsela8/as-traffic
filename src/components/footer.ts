@@ -21,7 +21,7 @@ export function createFooter(): string {
             <!-- לוגו -->
             <div class="footer-logo-wrap">
               <a href="/" aria-label="א.ס הסדרי תנועה - עמוד הבית">
-                <img src="/assets/images/logo.svg" alt="א.ס הסדרי תנועה" style="height: auto;" />
+                <img src="/assets/images/logo.svg" alt="א.ס הסדרי תנועה" style="width:180px;height:auto;display:block;" />
               </a>
             </div>
 
