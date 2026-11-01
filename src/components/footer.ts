@@ -1,11 +1,18 @@
 export function createFooter(): string {
     return `
+      <style>
+@media(min-width:768px){
+  .footer-grid{grid-template-columns:1.4fr 1fr 1fr 1fr!important;gap:3rem!important}
+  .footer-bottom-nav{flex-direction:row!important}
+}
+.footer-bottom-nav{flex-direction:column;gap:0.5rem}
+</style>
       <footer role="contentinfo" style="background-color: #272424; color: white;">
 
         <div style="height: 4px; background-color: #F2521B;" role="presentation"></div>
 
         <div style="max-width: 80rem; margin: 0 auto; padding: 4rem 1.5rem;">
-          <div style="display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 3rem; align-items: start;">
+          <div style="display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: start;" class="footer-grid"">
 
             <!-- לוגו -->
             <div style="display: flex; flex-direction: column; gap: 1.5rem;">
@@ -84,11 +91,11 @@ export function createFooter(): string {
         </div>
 
         <div style="border-top: 1px solid rgba(255,255,255,0.1);">
-          <div style="max-width: 80rem; margin: 0 auto; padding: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+          <div style="max-width: 80rem; margin: 0 auto; padding: 1.5rem; display: flex; flex-direction: column; align-items: center; gap: 0.75rem;" class="footer-bottom-nav"">
             <p style="color: rgba(255,255,255,0.55); font-size: 0.75rem;">
               <small>© 2025 א.ס הסדרי תנועה בע"מ · כל הזכויות שמורות</small>
             </p>
-            <nav aria-label="קישורי מדיניות" style="display:flex;gap:1.5rem;">
+            <nav aria-label="קישורי מדיניות" style="display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;">
               <a href="/privacy.html" style="color: rgba(255,255,255,0.55); font-size: 0.75rem; text-decoration:none;" onmouseover="this.style.color='#F2521B'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">מדיניות פרטיות</a>
               <a href="/accessibility.html" style="color: rgba(255,255,255,0.55); font-size: 0.75rem; text-decoration:none;" onmouseover="this.style.color='#F2521B'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">הצהרת נגישות</a>
               <a href="/terms.html" style="color: rgba(255,255,255,0.55); font-size: 0.75rem; text-decoration:none;" onmouseover="this.style.color='#F2521B'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">תנאי שימוש</a>

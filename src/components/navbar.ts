@@ -45,14 +45,19 @@ export function createNavbar(): string {
         <!-- כפתור המבורגר -->
         <button
           id="menu-btn"
-          style="display: none; flex-direction: column; gap: 6px; padding: 8px; margin-inline-start: auto; cursor: pointer; background: none; border: none;"
+          style="display: none; align-items: center; justify-content: center; width: 40px; height: 40px; margin-inline-start: auto; cursor: pointer; background: none; border: none; border-radius: 4px;"
           aria-label="פתח תפריט ניווט"
           aria-expanded="false"
           aria-controls="mobile-menu"
         >
-          <span style="display: block; width: 24px; height: 2px; background: white;" aria-hidden="true"></span>
-          <span style="display: block; width: 24px; height: 2px; background: white;" aria-hidden="true"></span>
-          <span style="display: block; width: 24px; height: 2px; background: white;" aria-hidden="true"></span>
+          <!-- המבורגר -->
+          <svg id="menu-icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+          <!-- X -->
+          <svg id="menu-icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false" style="display:none;">
+            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
         </button>
 
       </div>
@@ -128,11 +133,18 @@ export function initNavbar(): void {
     navbar.classList.toggle('shadow-lg', window.scrollY > 10)
   })
 
+  const iconOpen = document.getElementById('menu-icon-open')
+  const iconClose = document.getElementById('menu-icon-close')
+
   menuBtn.addEventListener('click', () => {
     const isOpen = !mobileMenu.classList.contains('hidden')
     mobileMenu.classList.toggle('hidden')
     menuBtn.setAttribute('aria-expanded', String(!isOpen))
     menuBtn.setAttribute('aria-label', isOpen ? 'פתח תפריט ניווט' : 'סגור תפריט ניווט')
+    if (iconOpen && iconClose) {
+      iconOpen.style.display = isOpen ? '' : 'none'
+      iconClose.style.display = isOpen ? 'none' : ''
+    }
   })
 
   // סגור תפריט בלחיצת Escape
@@ -141,6 +153,7 @@ export function initNavbar(): void {
       mobileMenu.classList.add('hidden')
       menuBtn.setAttribute('aria-expanded', 'false')
       menuBtn.setAttribute('aria-label', 'פתח תפריט ניווט')
+      if (iconOpen && iconClose) { iconOpen.style.display = ''; iconClose.style.display = 'none' }
       menuBtn.focus()
     }
   })
