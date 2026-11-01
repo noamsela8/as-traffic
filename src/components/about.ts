@@ -1,19 +1,21 @@
 export function createAbout(): string {
   return `
     <style>
-.about-grid{grid-template-columns:repeat(2,1fr)!important}
-.about-icon{width:80px!important;height:80px!important}
-@media(min-width:768px){
-  .about-grid{grid-template-columns:repeat(4,1fr)!important}
-  .about-icon{width:120px!important;height:120px!important}
-}
-</style>
+    .about-grid{display:grid;gap:2px;margin-top:2rem;grid-template-columns:repeat(2,1fr)}
+    .about-icon{width:100px!important;height:100px!important}
+    .about-card{background:#f5f5f5;padding:1.25rem;border-top:3px solid transparent;text-align:center;transition:border-color 0.3s}
+    .about-card p{font-size:0.95rem!important;color:#444!important}
+    @media(min-width:768px){
+      .about-grid{grid-template-columns:repeat(4,1fr)}
+      .about-icon{width:120px!important;height:120px!important}
+      .about-card{padding:2rem}
+    }
+    </style>
     <section aria-label="אודות החברה" style="background:white;padding:6rem 0;">
       <div style="max-width:80rem;margin:0 auto;padding:0 1.5rem;">
 
         <!-- כותרת ותוכן מרכזי -->
         <div style="text-align:center;max-width:800px;margin:0 auto 4rem;">
-
 
           <h2 style="font-family:'Rubik',sans-serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:900;color:#272424;line-height:1.2;letter-spacing:-0.01em;margin-bottom:2rem;">
             ניסיון, בטיחות וסטנדרט ביצוע בלתי מתפשר.
@@ -42,34 +44,34 @@ export function createAbout(): string {
         </div>
 
         <!-- סרגל 4 בולטים -->
-        <div style="display:grid;gap:2px;margin-top:2rem;" class="about-grid"">
+        <div class="about-grid">
 
-          <div style="background:#f5f5f5;padding:2rem;border-top:3px solid transparent;text-align:center;transition:border-color 0.3s;"
+          <div class="about-card"
             onmouseover="this.style.borderColor='#F2521B'"
             onmouseout="this.style.borderColor='transparent'">
-            <div style="display:flex;justify-content:center;margin-bottom:1rem;"><img src="/assets/images/icons/about-icon-safety.svg" alt="בטיחות" class="about-icon" style="width:80px;height:80px;object-fit:contain;" /></div>
-            <p style="font-size:0.875rem;color:#595959;line-height:1.6;">עמידה מוחלטת בתקני הבטיחות הגבוהים ביותר.</p>
+            <div style="display:flex;justify-content:center;margin-bottom:1rem;"><img src="/assets/images/icons/about-icon-safety.svg" alt="בטיחות" class="about-icon" /></div>
+            <p style="font-size:0.8rem;color:#595959;line-height:1.6;">עמידה מוחלטת בתקני הבטיחות הגבוהים ביותר.</p>
           </div>
 
-          <div style="background:#f5f5f5;padding:2rem;border-top:3px solid transparent;text-align:center;transition:border-color 0.3s;"
+          <div class="about-card"
             onmouseover="this.style.borderColor='#F2521B'"
             onmouseout="this.style.borderColor='transparent'">
-            <div style="display:flex;justify-content:center;margin-bottom:1rem;"><img src="/assets/images/icons/about-icon-professional.svg" alt="מקצועיות" class="about-icon" style="width:80px;height:80px;object-fit:contain;" /></div>
-            <p style="font-size:0.875rem;color:#595959;line-height:1.6;">צוותים מיומנים ומוסמכים עם ניסיון רב.</p>
+            <div style="display:flex;justify-content:center;margin-bottom:1rem;"><img src="/assets/images/icons/about-icon-professional.svg" alt="מקצועיות" class="about-icon" /></div>
+            <p style="font-size:0.8rem;color:#595959;line-height:1.6;">צוותים מיומנים ומוסמכים עם ניסיון רב.</p>
           </div>
 
-          <div style="background:#f5f5f5;padding:2rem;border-top:3px solid transparent;text-align:center;transition:border-color 0.3s;"
+          <div class="about-card"
             onmouseover="this.style.borderColor='#F2521B'"
             onmouseout="this.style.borderColor='transparent'">
-            <div style="display:flex;justify-content:center;margin-bottom:1rem;"><img src="/assets/images/icons/about-icon-standards.svg" alt="עמידה בתקנים" class="about-icon" style="width:80px;height:80px;object-fit:contain;" /></div>
-            <p style="font-size:0.875rem;color:#595959;line-height:1.6;">פעילות בהתאם לתקנים המקצועיים ותקנות מע"צ.</p>
+            <div style="display:flex;justify-content:center;margin-bottom:1rem;"><img src="/assets/images/icons/about-icon-standards.svg" alt="עמידה בתקנים" class="about-icon" /></div>
+            <p style="font-size:0.8rem;color:#595959;line-height:1.6;">פעילות בהתאם לתקנים המקצועיים ותקנות מע"צ.</p>
           </div>
 
-          <div style="background:#f5f5f5;padding:2rem;border-top:3px solid transparent;text-align:center;transition:border-color 0.3s;"
+          <div class="about-card"
             onmouseover="this.style.borderColor='#F2521B'"
             onmouseout="this.style.borderColor='transparent'">
-            <div style="display:flex;justify-content:center;margin-bottom:1rem;"><img src="/assets/images/icons/about-icon-efficiency.svg" alt="יעילות" class="about-icon" style="width:80px;height:80px;object-fit:contain;" /></div>
-            <p style="font-size:0.875rem;color:#595959;line-height:1.6;">ביצוע מהיר ומדויק עם מינימום הפרעה לתנועה.</p>
+            <div style="display:flex;justify-content:center;margin-bottom:1rem;"><img src="/assets/images/icons/about-icon-efficiency.svg" alt="יעילות" class="about-icon" /></div>
+            <p style="font-size:0.8rem;color:#595959;line-height:1.6;">ביצוע מהיר ומדויק עם מינימום הפרעה לתנועה.</p>
           </div>
 
         </div>
