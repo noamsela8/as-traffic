@@ -236,10 +236,10 @@ export function createContactPage(): string {
       </div>
 
       <!-- SIDEBAR -->
-      <div style="display: flex; flex-direction: column; gap: 24px;">
+      <div class="contact-sidebar" style="display: flex; flex-direction: column; gap: 24px;">
 
         <!-- Contact info card -->
-        <div style="
+        <div class="contact-info-card" style="
           background: #272424; border-radius: 20px; padding: 40px 36px;
           color: #fff;
         ">
@@ -320,7 +320,7 @@ export function createContactPage(): string {
         </div>
 
         <!-- Quick actions card -->
-        <div style="
+        <div class="contact-quick-card" style="
           background: #fff; border-radius: 20px; padding: 32px;
           box-shadow: 0 4px 24px rgba(0,0,0,0.06); border: 1.5px solid #f0eeec;
         ">
@@ -370,6 +370,11 @@ export function createContactPage(): string {
       .form-row {
         grid-template-columns: 1fr !important;
       }
+    }
+    @media (max-width: 767px) {
+      .contact-sidebar { order: -1 !important; }
+      .contact-quick-card { order: -1 !important; }
+      .contact-info-card { order: 1 !important; }
     }
   </style>
   `
