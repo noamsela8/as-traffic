@@ -110,7 +110,7 @@ const categories: CategoryCard[] = [
   {
     id: 'signs',
     name: 'תמרורים',
-    description: 'אנו מייצרים ומספקים את כלל סוגי התמרורים הישראליים, בהתאם ללוח התמרורים הרשמי של משרד התחבורה ולדרישות התקינה והמפרטים הרלוונטיים של מע"צ (נתיבי ישראל). אנו מציעים פתרון מקיף הכולל רכישה, התקנה והשכרה של תמרורים, בהתאמה לצורכי הפרויקט ולדרישות השטח. <br><br><a href="https://www.gov.il/he/Departments/policies/tamrurim_7924_01_18" target="_blank" rel="noopener" style="color:#F2521B;font-weight:700;text-decoration:underline;">לצפייה בלוח התמרורים הרשמי של משרד התחבורה ←</a>',
+    description: 'אנו מייצרים ומספקים את כלל סוגי התמרורים הישראליים, בהתאם ללוח התמרורים הרשמי של משרד התחבורה. אנו מציעים פתרון מקיף הכולל רכישה, התקנה והשכרה של תמרורים, בהתאמה לצורכי הפרויקט ולדרישות השטח. <br><br><a href="https://www.gov.il/he/Departments/policies/tamrurim_7924_01_18" target="_blank" rel="noopener" style="color:#F2521B;font-weight:700;text-decoration:underline;">לצפייה בלוח התמרורים הרשמי של משרד התחבורה ←</a>',
     images: [
       '/assets/images/catalog/signage/signs/signs-1.png',
       '/assets/images/catalog/signage/signs/signs-2.webp',

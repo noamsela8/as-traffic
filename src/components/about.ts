@@ -2,12 +2,12 @@ export function createAbout(): string {
   return `
     <style>
     .about-grid{display:grid;gap:2px;margin-top:2rem;grid-template-columns:repeat(2,1fr)}
-    .about-icon{width:100px!important;height:100px!important}
+    .about-icon{width:110px!important;height:110px!important;object-fit:contain}
     .about-card{background:#f5f5f5;padding:1.25rem;border-top:3px solid transparent;text-align:center;transition:border-color 0.3s}
-    .about-card p{font-size:0.95rem!important;color:#444!important}
+    .about-card p{font-size:0.95rem!important;color:#444!important;line-height:1.7}
     @media(min-width:768px){
       .about-grid{grid-template-columns:repeat(4,1fr)}
-      .about-icon{width:120px!important;height:120px!important}
+      .about-icon{width:130px!important;height:130px!important}
       .about-card{padding:2rem}
     }
     </style>
@@ -50,28 +50,28 @@ export function createAbout(): string {
             onmouseover="this.style.borderColor='#F2521B'"
             onmouseout="this.style.borderColor='transparent'">
             <div style="display:flex;justify-content:center;margin-bottom:1rem;"><img src="/assets/images/icons/about-icon-safety.svg" alt="בטיחות" class="about-icon" /></div>
-            <p style="font-size:0.8rem;color:#595959;line-height:1.6;">עמידה מוחלטת בתקני הבטיחות הגבוהים ביותר.</p>
+            <p>עמידה מוחלטת בתקני הבטיחות הגבוהים ביותר.</p>
           </div>
 
           <div class="about-card"
             onmouseover="this.style.borderColor='#F2521B'"
             onmouseout="this.style.borderColor='transparent'">
             <div style="display:flex;justify-content:center;margin-bottom:1rem;"><img src="/assets/images/icons/about-icon-professional.svg" alt="מקצועיות" class="about-icon" /></div>
-            <p style="font-size:0.8rem;color:#595959;line-height:1.6;">צוותים מיומנים ומוסמכים עם ניסיון רב.</p>
+            <p>צוותים מיומנים ומוסמכים עם ניסיון רב.</p>
           </div>
 
           <div class="about-card"
             onmouseover="this.style.borderColor='#F2521B'"
             onmouseout="this.style.borderColor='transparent'">
             <div style="display:flex;justify-content:center;margin-bottom:1rem;"><img src="/assets/images/icons/about-icon-standards.svg" alt="עמידה בתקנים" class="about-icon" /></div>
-            <p style="font-size:0.8rem;color:#595959;line-height:1.6;">פעילות בהתאם לתקנים המקצועיים ותקנות מע"צ.</p>
+            <p>פעילות בהתאם לתקנים המקצועיים ותקנות נת"י.</p>
           </div>
 
           <div class="about-card"
             onmouseover="this.style.borderColor='#F2521B'"
             onmouseout="this.style.borderColor='transparent'">
             <div style="display:flex;justify-content:center;margin-bottom:1rem;"><img src="/assets/images/icons/about-icon-efficiency.svg" alt="יעילות" class="about-icon" /></div>
-            <p style="font-size:0.8rem;color:#595959;line-height:1.6;">ביצוע מהיר ומדויק עם מינימום הפרעה לתנועה.</p>
+            <p>ביצוע מהיר ומדויק עם מינימום הפרעה לתנועה.</p>
           </div>
 
         </div>

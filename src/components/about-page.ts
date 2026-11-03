@@ -28,8 +28,8 @@ export function createAboutPage(): string {
         </div>
 
         <!-- תמונה -->
-        <div style="max-width:1000px;margin:0 auto 7rem;border-radius:8px;overflow:hidden;aspect-ratio:16/6;">
-          <img src="/assets/images/about-hero.webp" alt="צוות א.ס הסדרי תנועה בפעולה בשטח" style="width:100%;height:100%;object-fit:cover;display:block;">
+        <div style="max-width:1000px;margin:0 auto 7rem;border-radius:8px;overflow:hidden;">
+          <img src="/assets/images/about-hero.webp" alt="צוות א.ס הסדרי תנועה בפעולה בשטח" style="width:100%;height:auto;display:block;">
         </div>
 
       </div>
@@ -152,7 +152,6 @@ export function createAboutPage(): string {
             <div style="position:absolute;top:-10px;right:16px;font-family:'Rubik',sans-serif;font-size:6rem;font-weight:900;color:rgba(242,101,34,0.07);line-height:1;user-select:none;">01</div>
             <div style="position:relative;z-index:1;">
               <div style="display:flex;justify-content:center;margin-bottom:1.25rem;"><img src="/assets/images/icons/about-icon-safety.svg" alt="בטיחות" style="width:150px;height:150px;object-fit:contain;" /></div>
-              <div style="width:2rem;height:2px;background:#F2521B;margin-bottom:0.75rem;"></div>
               <p style="font-size:0.875rem;color:#7a7a7a;line-height:1.7;">עמידה מוחלטת בתקני הבטיחות הגבוהים ביותר בכל פרויקט ובכל שעה.</p>
             </div>
           </div>
@@ -163,7 +162,6 @@ export function createAboutPage(): string {
             <div style="position:absolute;top:-10px;right:16px;font-family:'Rubik',sans-serif;font-size:6rem;font-weight:900;color:rgba(242,101,34,0.07);line-height:1;user-select:none;">02</div>
             <div style="position:relative;z-index:1;">
               <div style="display:flex;justify-content:center;margin-bottom:1.25rem;"><img src="/assets/images/icons/about-icon-professional.svg" alt="מקצועיות" style="width:150px;height:150px;object-fit:contain;" /></div>
-              <div style="width:2rem;height:2px;background:#F2521B;margin-bottom:0.75rem;"></div>
               <p style="font-size:0.875rem;color:#7a7a7a;line-height:1.7;">צוותים מיומנים עם ניסיון רב וציוד ייעודי לכל סוג פרויקט.</p>
             </div>
           </div>
@@ -174,8 +172,7 @@ export function createAboutPage(): string {
             <div style="position:absolute;top:-10px;right:16px;font-family:'Rubik',sans-serif;font-size:6rem;font-weight:900;color:rgba(242,101,34,0.07);line-height:1;user-select:none;">03</div>
             <div style="position:relative;z-index:1;">
               <div style="display:flex;justify-content:center;margin-bottom:1.25rem;"><img src="/assets/images/icons/about-icon-standards.svg" alt="עמידה בתקנים" style="width:150px;height:150px;object-fit:contain;" /></div>
-              <div style="width:2rem;height:2px;background:#F2521B;margin-bottom:0.75rem;"></div>
-              <p style="font-size:0.875rem;color:#7a7a7a;line-height:1.7;">פעילות בהתאם לכל הדרישות הרגולטוריות ותקנות מע"צ.</p>
+              <p style="font-size:0.875rem;color:#7a7a7a;line-height:1.7;">פעילות בהתאם לכל הדרישות הרגולטוריות ותקנות נת"י.</p>
             </div>
           </div>
 
@@ -185,7 +182,6 @@ export function createAboutPage(): string {
             <div style="position:absolute;top:-10px;right:16px;font-family:'Rubik',sans-serif;font-size:6rem;font-weight:900;color:rgba(242,101,34,0.07);line-height:1;user-select:none;">04</div>
             <div style="position:relative;z-index:1;">
               <div style="display:flex;justify-content:center;margin-bottom:1.25rem;"><img src="/assets/images/icons/about-icon-reliability.svg" alt="אמינות" style="width:150px;height:150px;object-fit:contain;" /></div>
-              <div style="width:2rem;height:2px;background:#F2521B;margin-bottom:0.75rem;"></div>
               <p style="font-size:0.875rem;color:#7a7a7a;line-height:1.7;">מחויבות מלאה ללקוח לאורך כל שלבי הפרויקט.</p>
             </div>
           </div>
@@ -196,7 +192,6 @@ export function createAboutPage(): string {
             <div style="position:absolute;top:-10px;right:16px;font-family:'Rubik',sans-serif;font-size:6rem;font-weight:900;color:rgba(242,101,34,0.07);line-height:1;user-select:none;">05</div>
             <div style="position:relative;z-index:1;">
               <div style="display:flex;justify-content:center;margin-bottom:1.25rem;"><img src="/assets/images/icons/about-icon-efficiency.svg" alt="יעילות" style="width:150px;height:150px;object-fit:contain;" /></div>
-              <div style="width:2rem;height:2px;background:#F2521B;margin-bottom:0.75rem;"></div>
               <p style="font-size:0.875rem;color:#7a7a7a;line-height:1.7;">אפשור עבודה יעילה תוך התחשבות מיטבית בעוברי הדרך.</p>
             </div>
           </div>
@@ -207,7 +202,6 @@ export function createAboutPage(): string {
             <div style="position:absolute;top:-10px;right:16px;font-family:'Rubik',sans-serif;font-size:6rem;font-weight:900;color:rgba(242,101,34,0.07);line-height:1;user-select:none;">06</div>
             <div style="position:relative;z-index:1;">
               <div style="display:flex;justify-content:center;margin-bottom:1.25rem;"><img src="/assets/images/icons/about-icon-commitment.svg" alt="מחויבות ומסירות" style="width:150px;height:150px;object-fit:contain;" /></div>
-              <div style="width:2rem;height:2px;background:#F2521B;margin-bottom:0.75rem;"></div>
               <p style="font-size:0.875rem;color:#7a7a7a;line-height:1.7;">אחריות אישית, מסירות ושאיפה תמידית למצוינות ולהשגת יעדי הקבוצה.</p>
             </div>
           </div>
