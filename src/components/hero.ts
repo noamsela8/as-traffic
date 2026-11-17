@@ -1,13 +1,15 @@
 export function createHero(): string {
     return `
-      <style>@media(min-width:640px){.hero-btns{flex-direction:row!important;align-items:center!important}}</style>
+      <style>
+        @media(min-width:640px){.hero-btns{flex-direction:row!important;align-items:center!important}}
+      </style>
       <section id="main-content" style="position:relative;width:100%;height:100vh;min-height:600px;overflow:hidden;display:flex;align-items:center;" aria-label="אזור פתיחה - א.ס הסדרי תנועה">
 
-        <video id="hero-video" autoplay muted loop playsinline
+        <video id="hero-video" autoplay muted loop playsinline preload="auto"
           style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;"
           aria-hidden="true"
           tabindex="-1">
-          <source src="/hero-desktop.webm" type="video/webm">
+          <source id="hero-video-source" src="/hero-desktop.webm" type="video/webm">
         </video>
 
         <div style="position:absolute;inset:0;background:linear-gradient(to left,rgba(0,0,0,0.75),rgba(0,0,0,0.45) 60%,rgba(0,0,0,0.20));z-index:1;" aria-hidden="true"></div>
@@ -76,6 +78,52 @@ export function initHero(): void {
   const iconPlay = document.getElementById('hero-icon-play') as SVGElement | null
 
   if (!video || !toggleBtn || !iconPause || !iconPlay) return
+
+  // פונקציה להחלת סגנונות מובייל על הסרטון
+  const source = document.getElementById('hero-video-source') as HTMLSourceElement | null
+
+  function applyMobileVideoStyles() {
+    if (!video || !source) return
+    if (window.innerWidth < 640) {
+      // מובייל — סרטון ייעודי פורטרייט
+      if (source.src !== location.origin + '/hero-mobile.webm') {
+        source.src = '/hero-mobile.webm'
+        video.load()
+        video.play().catch(() => {})
+      }
+      video.style.position = 'absolute'
+      video.style.width = '100%'
+      video.style.height = '100%'
+      video.style.maxWidth = 'none'
+      video.style.maxHeight = 'none'
+      video.style.top = '0'
+      video.style.left = '0'
+      video.style.transform = ''
+      video.style.objectFit = 'cover'
+    } else {
+      // דסקטופ — סרטון לנדסקייפ
+      if (source.src !== location.origin + '/hero-desktop.webm') {
+        source.src = '/hero-desktop.webm'
+        video.load()
+        video.play().catch(() => {})
+      }
+      video.style.position = 'absolute'
+      video.style.width = '100%'
+      video.style.height = '100%'
+      video.style.maxWidth = ''
+      video.style.maxHeight = ''
+      video.style.top = '0'
+      video.style.left = '0'
+      video.style.transform = ''
+      video.style.objectFit = 'cover'
+    }
+  }
+
+  // מחילים מיד בטעינה
+  applyMobileVideoStyles()
+
+  // מחילים גם כשמשנים גודל חלון (כולל סיבוב מסך)
+  window.addEventListener('resize', applyMobileVideoStyles)
 
   // אם המשתמש מעדיף תנועה מופחתת — עוצרים מיד
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
