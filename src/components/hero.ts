@@ -1,12 +1,13 @@
 export function createHero(): string {
     return `
-      <section id="main-content" role="main" style="position:relative;width:100%;height:100vh;min-height:600px;overflow:hidden;display:flex;align-items:center;" aria-label="אזור פתיחה - א.ס הסדרי תנועה">
+      <style>@media(min-width:640px){.hero-btns{flex-direction:row!important;align-items:center!important}}</style>
+      <section id="main-content" style="position:relative;width:100%;height:100vh;min-height:600px;overflow:hidden;display:flex;align-items:center;" aria-label="אזור פתיחה - א.ס הסדרי תנועה">
 
         <video id="hero-video" autoplay muted loop playsinline
           style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;"
           aria-hidden="true"
           tabindex="-1">
-          <source src="/road_video.mp4" type="video/mp4">
+          <source src="/hero-desktop.webm" type="video/webm">
         </video>
 
         <div style="position:absolute;inset:0;background:linear-gradient(to left,rgba(0,0,0,0.75),rgba(0,0,0,0.45) 60%,rgba(0,0,0,0.20));z-index:1;" aria-hidden="true"></div>
@@ -42,7 +43,7 @@ export function createHero(): string {
             בפריסה ארצית מלאה, סביב השעון.
           </p>
 
-          <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+          <div style="display:flex;flex-direction:column;gap:0.75rem;align-items:flex-start;" class="hero-btns">
 
             <a href="/about.html"
               style="background:#F2521B;color:white;padding:0.875rem 2rem;font-family:'Rubik',sans-serif;font-weight:700;font-size:0.9rem;text-transform:uppercase;letter-spacing:0.06em;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;"

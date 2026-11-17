@@ -19,6 +19,8 @@ export default defineConfig({
         marking:        resolve(__dirname, 'marking.html'),
         'safety-catalog':  resolve(__dirname, 'safety-catalog.html'),
         'signage-catalog': resolve(__dirname, 'signage-catalog.html'),
+        privacy:           resolve(__dirname, 'privacy.html'),
+        terms:             resolve(__dirname, 'terms.html'),
       },
     },
   },

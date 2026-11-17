@@ -94,19 +94,19 @@ export function createNavbar(): string {
         style="display:none;position:absolute;bottom:64px;left:0;background:#fff;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.18);padding:1rem;min-width:220px;border:1px solid #eee;">
         <p style="font-family:'Rubik',sans-serif;font-size:0.8rem;font-weight:800;color:#272424;margin:0 0 0.75rem;text-align:center;border-bottom:1px solid #eee;padding-bottom:0.6rem;">אפשרויות נגישות</p>
         <div style="display:flex;flex-direction:column;gap:0.5rem;">
-          <button onclick="adjustFontSize(1)" style="background:#f5f5f5;border:none;border-radius:8px;padding:0.55rem 0.85rem;cursor:pointer;font-family:'Rubik',sans-serif;font-size:0.85rem;font-weight:600;color:#272424;text-align:right;display:flex;align-items:center;gap:0.5rem;">
+          <button type="button" onclick="adjustFontSize(1)" aria-label="הגדל טקסט" style="background:#f5f5f5;border:none;border-radius:8px;padding:0.55rem 0.85rem;cursor:pointer;font-family:'Rubik',sans-serif;font-size:0.85rem;font-weight:600;color:#272424;text-align:right;display:flex;align-items:center;gap:0.5rem;">
             <span aria-hidden="true" style="font-size:1.1rem;font-weight:900;">A+</span> הגדל טקסט
           </button>
-          <button onclick="adjustFontSize(-1)" style="background:#f5f5f5;border:none;border-radius:8px;padding:0.55rem 0.85rem;cursor:pointer;font-family:'Rubik',sans-serif;font-size:0.85rem;font-weight:600;color:#272424;text-align:right;display:flex;align-items:center;gap:0.5rem;">
+          <button type="button" onclick="adjustFontSize(-1)" aria-label="הקטן טקסט" style="background:#f5f5f5;border:none;border-radius:8px;padding:0.55rem 0.85rem;cursor:pointer;font-family:'Rubik',sans-serif;font-size:0.85rem;font-weight:600;color:#272424;text-align:right;display:flex;align-items:center;gap:0.5rem;">
             <span aria-hidden="true" style="font-size:0.85rem;font-weight:900;">A-</span> הקטן טקסט
           </button>
-          <button onclick="toggleHighContrast()" id="contrast-btn" style="background:#f5f5f5;border:none;border-radius:8px;padding:0.55rem 0.85rem;cursor:pointer;font-family:'Rubik',sans-serif;font-size:0.85rem;font-weight:600;color:#272424;text-align:right;display:flex;align-items:center;gap:0.5rem;">
+          <button type="button" onclick="toggleHighContrast()" id="contrast-btn" aria-label="הפעל ניגודיות גבוהה" aria-pressed="false" style="background:#f5f5f5;border:none;border-radius:8px;padding:0.55rem 0.85rem;cursor:pointer;font-family:'Rubik',sans-serif;font-size:0.85rem;font-weight:600;color:#272424;text-align:right;display:flex;align-items:center;gap:0.5rem;">
             <span aria-hidden="true">◑</span> ניגודיות גבוהה
           </button>
-          <button onclick="toggleReadableFont()" id="font-btn" style="background:#f5f5f5;border:none;border-radius:8px;padding:0.55rem 0.85rem;cursor:pointer;font-family:'Rubik',sans-serif;font-size:0.85rem;font-weight:600;color:#272424;text-align:right;display:flex;align-items:center;gap:0.5rem;">
+          <button type="button" onclick="toggleReadableFont()" id="font-btn" aria-label="הפעל גופן קריא" aria-pressed="false" style="background:#f5f5f5;border:none;border-radius:8px;padding:0.55rem 0.85rem;cursor:pointer;font-family:'Rubik',sans-serif;font-size:0.85rem;font-weight:600;color:#272424;text-align:right;display:flex;align-items:center;gap:0.5rem;">
             <span aria-hidden="true">Aa</span> גופן קריא
           </button>
-          <button onclick="resetAccessibility()" style="background:#fff;border:1px solid #ddd;border-radius:8px;padding:0.55rem 0.85rem;cursor:pointer;font-family:'Rubik',sans-serif;font-size:0.8rem;color:#595959;text-align:center;margin-top:0.25rem;">
+          <button type="button" onclick="resetAccessibility()" aria-label="אפס את כל הגדרות הנגישות" style="background:#fff;border:1px solid #ddd;border-radius:8px;padding:0.55rem 0.85rem;cursor:pointer;font-family:'Rubik',sans-serif;font-size:0.8rem;color:#595959;text-align:center;margin-top:0.25rem;">
             איפוס
           </button>
           <a href="/accessibility.html" style="display:block;text-align:center;color:#c23a00;font-family:'Rubik',sans-serif;font-size:0.78rem;font-weight:700;text-decoration:underline;margin-top:0.25rem;">
@@ -166,7 +166,37 @@ export function initNavbar(): void {
     const open = menu.style.display === 'block'
     menu.style.display = open ? 'none' : 'block'
     btn.setAttribute('aria-expanded', String(!open))
+    // העבר focus לכפתור הראשון בתפריט כשנפתח
+    if (!open) {
+      const firstBtn = menu.querySelector<HTMLElement>('button, a[href]')
+      if (firstBtn) firstBtn.focus()
+    }
   }
+
+  // Focus trap + Escape בתפריט נגישות
+  document.addEventListener('keydown', (e: KeyboardEvent) => {
+    const menu = document.getElementById('accessibility-menu')
+    const btn = document.getElementById('accessibility-btn')
+    if (!menu || menu.style.display !== 'block') return
+
+    if (e.key === 'Escape') {
+      menu.style.display = 'none'
+      if (btn) { btn.setAttribute('aria-expanded', 'false'); btn.focus() }
+      return
+    }
+
+    if (e.key === 'Tab') {
+      const focusable = Array.from(menu.querySelectorAll<HTMLElement>('button, a[href]'))
+      if (focusable.length === 0) return
+      const first = focusable[0]
+      const last = focusable[focusable.length - 1]
+      if (e.shiftKey) {
+        if (document.activeElement === first) { e.preventDefault(); last.focus() }
+      } else {
+        if (document.activeElement === last) { e.preventDefault(); first.focus() }
+      }
+    }
+  })
 
   ;(window as any).adjustFontSize = (delta: number) => {
     fontLevel = Math.max(-3, Math.min(5, fontLevel + delta))
@@ -178,11 +208,10 @@ export function initNavbar(): void {
     const btn = document.getElementById('contrast-btn')
     if (highContrast) {
       document.body.style.filter = 'contrast(1.5) saturate(0)'
-      if (btn) btn.style.background = '#272424'
-      if (btn) btn.style.color = '#fff'
+      if (btn) { btn.style.background = '#272424'; btn.style.color = '#fff'; btn.setAttribute('aria-pressed', 'true') }
     } else {
       document.body.style.filter = ''
-      if (btn) { btn.style.background = '#f5f5f5'; btn.style.color = '#272424' }
+      if (btn) { btn.style.background = '#f5f5f5'; btn.style.color = '#272424'; btn.setAttribute('aria-pressed', 'false') }
     }
   }
 
@@ -193,13 +222,12 @@ export function initNavbar(): void {
       document.body.style.fontFamily = 'Arial, sans-serif'
       document.body.style.letterSpacing = '0.03em'
       document.body.style.lineHeight = '1.9'
-      if (btn) btn.style.background = '#272424'
-      if (btn) btn.style.color = '#fff'
+      if (btn) { btn.style.background = '#272424'; btn.style.color = '#fff'; btn.setAttribute('aria-pressed', 'true') }
     } else {
       document.body.style.fontFamily = ''
       document.body.style.letterSpacing = ''
       document.body.style.lineHeight = ''
-      if (btn) { btn.style.background = '#f5f5f5'; btn.style.color = '#272424' }
+      if (btn) { btn.style.background = '#f5f5f5'; btn.style.color = '#272424'; btn.setAttribute('aria-pressed', 'false') }
     }
   }
 
@@ -214,8 +242,8 @@ export function initNavbar(): void {
     document.body.style.lineHeight = ''
     const contrastBtn = document.getElementById('contrast-btn')
     const fontBtn = document.getElementById('font-btn')
-    if (contrastBtn) { contrastBtn.style.background = '#f5f5f5'; contrastBtn.style.color = '#272424' }
-    if (fontBtn) { fontBtn.style.background = '#f5f5f5'; fontBtn.style.color = '#272424' }
+    if (contrastBtn) { contrastBtn.style.background = '#f5f5f5'; contrastBtn.style.color = '#272424'; contrastBtn.setAttribute('aria-pressed', 'false') }
+    if (fontBtn) { fontBtn.style.background = '#f5f5f5'; fontBtn.style.color = '#272424'; fontBtn.setAttribute('aria-pressed', 'false') }
   }
 
   // סגור תפריט נגישות בלחיצה מחוץ אליו

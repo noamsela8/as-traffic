@@ -13,7 +13,7 @@ const content = `
       <h1 style="font-family:'Rubik',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:#272424;margin:0 0 0.5rem;">
         הצהרת נגישות
       </h1>
-      <p style="color:#595959;font-size:0.9rem;margin:0 0 2.5rem;"><time datetime="2025-10">עודכן לאחרונה: אוקטובר 2025</time></p>
+      <p style="color:#595959;font-size:0.9rem;margin:0 0 2.5rem;"><time datetime="2026-11">עודכן לאחרונה: נובמבר 2026</time></p>
 
       <div style="background:#fff;border-radius:12px;padding:2.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.06);margin-bottom:1.5rem;">
         <h2 style="font-family:'Rubik',sans-serif;font-size:1.2rem;font-weight:800;color:#272424;margin:0 0 1rem;">מחויבות לנגישות</h2>
