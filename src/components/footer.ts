@@ -99,7 +99,7 @@ export function createFooter(): string {
         <div style="border-top: 1px solid rgba(255,255,255,0.1);">
           <div style="max-width: 80rem; margin: 0 auto; padding: 1.5rem; display: flex; flex-direction: column; align-items: center; gap: 0.75rem;" class="footer-bottom-nav"">
             <p style="color: rgba(255,255,255,0.55); font-size: 0.75rem;">
-              <small>© 2025 א.ס הסדרי תנועה בע"מ · כל הזכויות שמורות</small>
+              <small>© 2026 א.ס הסדרי תנועה בע"מ · כל הזכויות שמורות</small>
             </p>
             <nav aria-label="קישורי מדיניות" style="display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;">
               <a href="/privacy.html" style="color: rgba(255,255,255,0.55); font-size: 0.75rem; text-decoration:none;" onmouseover="this.style.color='#F2521B'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">מדיניות פרטיות</a>

@@ -106,6 +106,12 @@ export function createNavbar(): string {
           <button type="button" onclick="toggleReadableFont()" id="font-btn" aria-label="הפעל גופן קריא" aria-pressed="false" style="background:#f5f5f5;border:none;border-radius:8px;padding:0.55rem 0.85rem;cursor:pointer;font-family:'Rubik',sans-serif;font-size:0.85rem;font-weight:600;color:#272424;text-align:right;display:flex;align-items:center;gap:0.5rem;">
             <span aria-hidden="true">Aa</span> גופן קריא
           </button>
+          <button type="button" onclick="toggleUnderlineLinks()" id="underline-btn" aria-label="הדגש קישורים" aria-pressed="false" style="background:#f5f5f5;border:none;border-radius:8px;padding:0.55rem 0.85rem;cursor:pointer;font-family:'Rubik',sans-serif;font-size:0.85rem;font-weight:600;color:#272424;text-align:right;display:flex;align-items:center;gap:0.5rem;">
+            <span aria-hidden="true" style="text-decoration:underline;">U</span> הדגש קישורים
+          </button>
+          <button type="button" onclick="toggleStopAnimations()" id="anim-btn" aria-label="עצור אנימציות" aria-pressed="false" style="background:#f5f5f5;border:none;border-radius:8px;padding:0.55rem 0.85rem;cursor:pointer;font-family:'Rubik',sans-serif;font-size:0.85rem;font-weight:600;color:#272424;text-align:right;display:flex;align-items:center;gap:0.5rem;">
+            <span aria-hidden="true">⏸</span> עצור אנימציות
+          </button>
           <button type="button" onclick="resetAccessibility()" aria-label="אפס את כל הגדרות הנגישות" style="background:#fff;border:1px solid #ddd;border-radius:8px;padding:0.55rem 0.85rem;cursor:pointer;font-family:'Rubik',sans-serif;font-size:0.8rem;color:#595959;text-align:center;margin-top:0.25rem;">
             איפוס
           </button>
@@ -155,9 +161,27 @@ export function initNavbar(): void {
   })
 
   // ── כפתור נגישות ──────────────────────────────────
+  // שחזור הגדרות שמורות
   let fontLevel = 0
   let highContrast = false
   let readableFont = false
+  let underlineLinks = false
+  let stopAnimations = false
+
+  function saveA11yState() {
+    try {
+      localStorage.setItem('a11y', JSON.stringify({ fontLevel, highContrast, readableFont, underlineLinks, stopAnimations }))
+    } catch {}
+  }
+
+  try {
+    const saved = JSON.parse(localStorage.getItem('a11y') || '{}')
+    if (saved.fontLevel) { fontLevel = saved.fontLevel; document.documentElement.style.fontSize = `${100 + fontLevel * 10}%` }
+    if (saved.highContrast) { highContrast = true; document.body.style.filter = 'contrast(1.5) saturate(0)'; const b = document.getElementById('contrast-btn'); if (b) { b.style.background='#272424'; b.style.color='#fff'; b.setAttribute('aria-pressed','true') } }
+    if (saved.readableFont) { readableFont = true; document.body.style.fontFamily='Arial,sans-serif'; document.body.style.letterSpacing='0.03em'; document.body.style.lineHeight='1.9'; const b = document.getElementById('font-btn'); if (b) { b.style.background='#272424'; b.style.color='#fff'; b.setAttribute('aria-pressed','true') } }
+    if (saved.underlineLinks) { underlineLinks = true; document.body.style.setProperty('--a11y-link-decoration','underline'); const style = document.getElementById('a11y-link-style') as HTMLStyleElement | null; if (style) style.textContent = 'a { text-decoration: underline !important; }'; const b = document.getElementById('underline-btn'); if (b) { b.style.background='#272424'; b.style.color='#fff'; b.setAttribute('aria-pressed','true') } }
+    if (saved.stopAnimations) { stopAnimations = true; const style = document.getElementById('a11y-anim-style') as HTMLStyleElement | null; if (style) style.textContent = '*, *::before, *::after { animation: none !important; transition: none !important; }'; const b = document.getElementById('anim-btn'); if (b) { b.style.background='#272424'; b.style.color='#fff'; b.setAttribute('aria-pressed','true') } }
+  } catch {}
 
   ;(window as any).toggleAccessibilityMenu = () => {
     const menu = document.getElementById('accessibility-menu')
@@ -198,9 +222,14 @@ export function initNavbar(): void {
     }
   })
 
+  // הוסף style tags לאנימציות וקישורים
+  const linkStyle = document.createElement('style'); linkStyle.id = 'a11y-link-style'; document.head.appendChild(linkStyle)
+  const animStyle = document.createElement('style'); animStyle.id = 'a11y-anim-style'; document.head.appendChild(animStyle)
+
   ;(window as any).adjustFontSize = (delta: number) => {
     fontLevel = Math.max(-3, Math.min(5, fontLevel + delta))
     document.documentElement.style.fontSize = `${100 + fontLevel * 10}%`
+    saveA11yState()
   }
 
   ;(window as any).toggleHighContrast = () => {
@@ -213,6 +242,7 @@ export function initNavbar(): void {
       document.body.style.filter = ''
       if (btn) { btn.style.background = '#f5f5f5'; btn.style.color = '#272424'; btn.setAttribute('aria-pressed', 'false') }
     }
+    saveA11yState()
   }
 
   ;(window as any).toggleReadableFont = () => {
@@ -229,21 +259,51 @@ export function initNavbar(): void {
       document.body.style.lineHeight = ''
       if (btn) { btn.style.background = '#f5f5f5'; btn.style.color = '#272424'; btn.setAttribute('aria-pressed', 'false') }
     }
+    saveA11yState()
+  }
+
+  ;(window as any).toggleUnderlineLinks = () => {
+    underlineLinks = !underlineLinks
+    const btn = document.getElementById('underline-btn')
+    const style = document.getElementById('a11y-link-style') as HTMLStyleElement | null
+    if (underlineLinks) {
+      if (style) style.textContent = 'a { text-decoration: underline !important; }'
+      if (btn) { btn.style.background = '#272424'; btn.style.color = '#fff'; btn.setAttribute('aria-pressed', 'true') }
+    } else {
+      if (style) style.textContent = ''
+      if (btn) { btn.style.background = '#f5f5f5'; btn.style.color = '#272424'; btn.setAttribute('aria-pressed', 'false') }
+    }
+    saveA11yState()
+  }
+
+  ;(window as any).toggleStopAnimations = () => {
+    stopAnimations = !stopAnimations
+    const btn = document.getElementById('anim-btn')
+    const style = document.getElementById('a11y-anim-style') as HTMLStyleElement | null
+    if (stopAnimations) {
+      if (style) style.textContent = '*, *::before, *::after { animation: none !important; transition: none !important; }'
+      if (btn) { btn.style.background = '#272424'; btn.style.color = '#fff'; btn.setAttribute('aria-pressed', 'true') }
+    } else {
+      if (style) style.textContent = ''
+      if (btn) { btn.style.background = '#f5f5f5'; btn.style.color = '#272424'; btn.setAttribute('aria-pressed', 'false') }
+    }
+    saveA11yState()
   }
 
   ;(window as any).resetAccessibility = () => {
-    fontLevel = 0
-    highContrast = false
-    readableFont = false
+    fontLevel = 0; highContrast = false; readableFont = false; underlineLinks = false; stopAnimations = false
     document.documentElement.style.fontSize = ''
     document.body.style.filter = ''
     document.body.style.fontFamily = ''
     document.body.style.letterSpacing = ''
     document.body.style.lineHeight = ''
-    const contrastBtn = document.getElementById('contrast-btn')
-    const fontBtn = document.getElementById('font-btn')
-    if (contrastBtn) { contrastBtn.style.background = '#f5f5f5'; contrastBtn.style.color = '#272424'; contrastBtn.setAttribute('aria-pressed', 'false') }
-    if (fontBtn) { fontBtn.style.background = '#f5f5f5'; fontBtn.style.color = '#272424'; fontBtn.setAttribute('aria-pressed', 'false') }
+    const linkSt = document.getElementById('a11y-link-style') as HTMLStyleElement | null
+    const animSt = document.getElementById('a11y-anim-style') as HTMLStyleElement | null
+    if (linkSt) linkSt.textContent = ''
+    if (animSt) animSt.textContent = ''
+    const ids = ['contrast-btn','font-btn','underline-btn','anim-btn']
+    ids.forEach(id => { const b = document.getElementById(id); if (b) { b.style.background='#f5f5f5'; b.style.color='#272424'; b.setAttribute('aria-pressed','false') } })
+    try { localStorage.removeItem('a11y') } catch {}
   }
 
   // סגור תפריט נגישות בלחיצה מחוץ אליו
