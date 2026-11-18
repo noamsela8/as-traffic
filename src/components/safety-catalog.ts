@@ -170,7 +170,7 @@ function renderProductCard(product: Product, index: number): string {
       </div>
       <!-- תוכן -->
       <div style="padding:1.25rem;display:flex;flex-direction:column;flex:1;">
-        <h3 style="font-family:'Heebo',sans-serif;font-size:1.1rem;font-weight:800;color:#272424;margin:0 0 0.5rem;">${product.name}</h3>
+        <h3 style="font-family:'Rubik',sans-serif;font-size:1.1rem;font-weight:800;color:#272424;margin:0 0 0.5rem;">${product.name}</h3>
         <p style="color:#666;font-size:0.88rem;line-height:1.65;margin:0 0 1rem;">${product.description}</p>
         <div style="display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:1rem;">
           ${product.tags.map(t => `<span style="background:#f5f5f5;color:#777;font-size:0.72rem;padding:0.2rem 0.55rem;border-radius:4px;">${t}</span>`).join('')}
@@ -197,9 +197,10 @@ export function createSafetyCatalog(): string {
         <img id="lightbox-img" src="" alt=""
           style="max-width:90vw;max-height:85vh;object-fit:contain;border-radius:8px;display:block;">
         <p id="lightbox-title"
-          style="color:#fff;text-align:center;font-family:'Heebo',sans-serif;font-weight:700;font-size:1rem;margin:0.75rem 0 0;"></p>
+          style="color:#fff;text-align:center;font-family:'Rubik',sans-serif;font-weight:700;font-size:1rem;margin:0.75rem 0 0;"></p>
         <button onclick="closeLightbox()"
-          style="position:absolute;top:-1rem;left:-1rem;background:#F2521B;color:#fff;border:none;border-radius:50%;width:36px;height:36px;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1;">✕</button>
+          aria-label="סגור תצוגה מוגדלת"
+          style="position:absolute;top:-1rem;left:-1rem;background:#F2521B;color:#fff;border:none;border-radius:50%;width:36px;height:36px;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1;"><span aria-hidden="true">✕</span></button>
       </div>
     </div>
 
@@ -207,10 +208,10 @@ export function createSafetyCatalog(): string {
     <section id="main-content" role="main" style="background:#272424;padding:5rem 2rem 3.5rem;text-align:center;">
       <div style="max-width:700px;margin:0 auto;">
         <a href="/products.html" style="color:rgba(255,255,255,0.5);font-size:0.85rem;text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:1.5rem;">
-          → חזרה למוצרים
+          <span aria-hidden="true">←</span> חזרה למוצרים
         </a>
         <p style="color:#F2521B;font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;margin:0 0 0.75rem;">קטלוג מוצרים</p>
-        <h1 style="font-family:'Heebo',sans-serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:900;color:#fff;margin:0 0 1rem;line-height:1.2;">
+        <h1 style="font-family:'Rubik',sans-serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:900;color:#fff;margin:0 0 1rem;line-height:1.2;">
           אביזרי בטיחות
         </h1>
         <p style="color:rgba(255,255,255,0.6);font-size:1rem;line-height:1.7;margin:0;">
@@ -231,7 +232,7 @@ export function createSafetyCatalog(): string {
     <!-- CTA -->
     <section style="background:#272424;padding:4rem 2rem;text-align:center;">
       <div style="max-width:600px;margin:0 auto;">
-        <h2 style="font-family:'Heebo',sans-serif;font-size:clamp(1.4rem,3vw,2rem);font-weight:900;color:#fff;margin:0 0 0.75rem;">
+        <h2 style="font-family:'Rubik',sans-serif;font-size:clamp(1.4rem,3vw,2rem);font-weight:900;color:#fff;margin:0 0 0.75rem;">
           לא מצאתם את מה שחיפשתם?
         </h2>
         <p style="color:rgba(255,255,255,0.6);margin:0 0 1.5rem;">
