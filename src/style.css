@@ -158,27 +158,23 @@
 }
 
 /* ===== Focus-visible — WCAG 2.4.7 / ת"י 5568 ===== */
-/* רקע בהיר: קו כתום */
+/* רקע בהיר: קו כתום — !important מנצח Tailwind preflight */
 *:focus-visible {
-  outline: 3px solid #F2521B;
-  outline-offset: 3px;
+  outline: 3px solid #F2521B !important;
+  outline-offset: 3px !important;
   border-radius: 2px;
 }
 
 /* רקע כהה (ניווט, פוטר, כפתור ווידאו, ווידג'ט נגישות): קו לבן */
-/* הערה: #partners-pause נמצא על רקע #f5f5f5 — אינו כלול כאן; מקבל קו כתום כברירת מחדל */
 header *:focus-visible,
 nav *:focus-visible,
 footer *:focus-visible,
 #accessibility-widget *:focus-visible,
 #hero-video-toggle:focus-visible {
-  outline-color: #ffffff;
+  outline-color: #ffffff !important;
 }
 
-/* כפתורי CTA כתומים (רקע #F2521B) — קו כהה #252222:
-   vs #F2521B (פנים הכפתור) = 4.51:1 ✓
-   vs #FFFFFF (רקע הסקשן)   = 15.78:1 ✓
-   נראה על כל רקע — אין צורך ב-double ring */
+/* כפתורי CTA כתומים (רקע #F2521B) — קו כהה */
 .cta-btn:focus-visible {
-  outline-color: #252222;
+  outline-color: #252222 !important;
 }
