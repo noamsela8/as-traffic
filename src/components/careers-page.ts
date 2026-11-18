@@ -119,7 +119,7 @@ function renderJob(job: Job, index: number): string {
 
   return `
     <div class="job-card" id="job-${job.id}"
-      style="background:#fff;border-radius:14px;box-shadow:0 2px 16px rgba(0,0,0,0.07);overflow:hidden;transition:box-shadow 0.3s;">
+      style="background:#fff;border-radius:14px;box-shadow:0 2px 16px rgba(0,0,0,0.07);transition:box-shadow 0.3s;position:relative;">
 
       <!-- כותרת הכרטיס — לחיצה לפתיחה -->
       <button
@@ -188,10 +188,15 @@ export function createCareersPage(): string {
 
   return `
     <style>
-      .job-card button:focus-visible,
-      .job-card button:focus {
-        outline: 3px solid #F2521B !important;
-        outline-offset: 2px !important;
+      /* focus-visible על כפתורי job-card — box-shadow במקום outline כי overflow:hidden חותך outline */
+      .job-card button:focus-visible {
+        outline: none !important;
+        box-shadow: 0 0 0 3px #F2521B !important;
+        border-radius: 14px;
+      }
+      .job-card button:focus:not(:focus-visible) {
+        outline: none !important;
+        box-shadow: none !important;
       }
     </style>
     <!-- HERO -->
