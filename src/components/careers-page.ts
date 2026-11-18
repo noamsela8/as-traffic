@@ -119,7 +119,7 @@ function renderJob(job: Job, index: number): string {
 
   return `
     <div class="job-card" id="job-${job.id}"
-      style="background:#fff;border-radius:14px;box-shadow:0 2px 16px rgba(0,0,0,0.07);transition:box-shadow 0.3s;position:relative;">
+      style="background:#fff;border-radius:14px;box-shadow:0 2px 16px rgba(0,0,0,0.07);overflow:hidden;transition:box-shadow 0.3s;">
 
       <!-- כותרת הכרטיס — לחיצה לפתיחה -->
       <button
@@ -132,7 +132,7 @@ function renderJob(job: Job, index: number): string {
           <div style="display:flex;align-items:flex-start;gap:1.25rem;flex:1;min-width:0;">
             <span style="background:#F2521B;color:#fff;font-size:0.8rem;font-weight:800;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:0.15rem;" aria-hidden="true">${String(index + 1).padStart(2,'0')}</span>
             <div style="min-width:0;">
-              <h3 style="font-family:'Rubik',sans-serif;font-size:1.25rem;font-weight:800;color:#272424;margin:0 0 0.75rem;text-align:right;">${job.title}</h3>
+              <h3 style="font-family:'Heebo',sans-serif;font-size:1.25rem;font-weight:800;color:#272424;margin:0 0 0.75rem;text-align:right;">${job.title}</h3>
               <div style="display:flex;flex-wrap:wrap;gap:1.25rem;">
                 <span style="display:flex;align-items:center;gap:0.4rem;color:#666;font-size:0.85rem;">
                   <span aria-hidden="true" style="color:#F2521B;">${icons.type}</span>${job.type}
@@ -157,7 +157,7 @@ function renderJob(job: Job, index: number): string {
 
           <!-- תיאור התפקיד -->
           <div style="margin-bottom:1.5rem;">
-            <h4 style="font-family:'Rubik',sans-serif;font-size:0.8rem;font-weight:700;color:#F2521B;text-transform:uppercase;letter-spacing:0.08em;margin:0 0 0.75rem;">תיאור התפקיד</h4>
+            <h4 style="font-family:'Heebo',sans-serif;font-size:0.8rem;font-weight:700;color:#F2521B;text-transform:uppercase;letter-spacing:0.08em;margin:0 0 0.75rem;">תיאור התפקיד</h4>
             <ul style="list-style:none;padding:0;margin:0;">
               ${descItems}
             </ul>
@@ -165,7 +165,7 @@ function renderJob(job: Job, index: number): string {
 
           <!-- דרישות -->
           <div style="margin-bottom:1.75rem;">
-            <h4 style="font-family:'Rubik',sans-serif;font-size:0.8rem;font-weight:700;color:#F2521B;text-transform:uppercase;letter-spacing:0.08em;margin:0 0 0.75rem;">דרישות</h4>
+            <h4 style="font-family:'Heebo',sans-serif;font-size:0.8rem;font-weight:700;color:#F2521B;text-transform:uppercase;letter-spacing:0.08em;margin:0 0 0.75rem;">דרישות</h4>
             <ul style="list-style:none;padding:0;margin:0;">
               ${reqItems}
             </ul>
@@ -187,23 +187,11 @@ export function createCareersPage(): string {
   const jobCards = jobs.map((job, i) => renderJob(job, i)).join('');
 
   return `
-    <style>
-      /* focus-visible על כפתורי job-card — box-shadow במקום outline כי overflow:hidden חותך outline */
-      .job-card button:focus-visible {
-        outline: none !important;
-        box-shadow: 0 0 0 3px #F2521B !important;
-        border-radius: 14px;
-      }
-      .job-card button:focus:not(:focus-visible) {
-        outline: none !important;
-        box-shadow: none !important;
-      }
-    </style>
     <!-- HERO -->
     <section id="main-content" role="main" aria-label="קריירה — הצטרפו לצוות" style="background:#272424;padding:6rem 2rem 4rem;text-align:center;">
       <div style="max-width:700px;margin:0 auto;">
         <p style="color:#F2521B;font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;margin:0 0 1rem;" aria-hidden="true">קריירה</p>
-        <h1 style="font-family:'Rubik',sans-serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:900;color:#fff;margin:0 0 1.25rem;line-height:1.2;">
+        <h1 style="font-family:'Heebo',sans-serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:900;color:#fff;margin:0 0 1.25rem;line-height:1.2;">
           מחפשים להצטרף<br>
           <span style="color:#F2521B;">לצוות שלנו?</span>
         </h1>
@@ -219,7 +207,7 @@ export function createCareersPage(): string {
 
         <!-- כותרת קטע -->
         <div style="margin-bottom:2.5rem;">
-          <h2 style="font-family:'Rubik',sans-serif;font-size:1.5rem;font-weight:800;color:#272424;margin:0 0 0.4rem;">
+          <h2 style="font-family:'Heebo',sans-serif;font-size:1.5rem;font-weight:800;color:#272424;margin:0 0 0.4rem;">
             משרות פתוחות
           </h2>
           <p style="color:#888;font-size:0.9rem;margin:0;">לחצו על משרה לפרטים נוספים</p>
@@ -233,17 +221,17 @@ export function createCareersPage(): string {
     </section>
 
     <!-- CTA — לא מצאתם? -->
-    <section aria-label="הגשת מועמדות כללית" style="background:#fff;padding:4rem 2rem;text-align:center;border-top:1px solid #eee;">
+    <section aria-label="הגשת מועמדות כללית" style="background:#272424;padding:4rem 2rem;text-align:center;">
       <div style="max-width:600px;margin:0 auto;">
-        <h2 style="font-family:'Rubik',sans-serif;font-size:1.5rem;font-weight:800;color:#272424;margin:0 0 0.75rem;">
+        <h2 style="font-family:'Heebo',sans-serif;font-size:clamp(1.4rem,3vw,2rem);font-weight:900;color:#fff;margin:0 0 0.75rem;">
           לא מצאתם משרה מתאימה?
         </h2>
-        <p style="color:#777;margin:0 0 1.5rem;line-height:1.7;">
+        <p style="color:rgba(255,255,255,0.6);margin:0 0 1.5rem;line-height:1.7;">
           שלחו לנו קורות חיים בכל מקרה — נשמח להכיר ולחזור אליכם כשתיפתח הזדמנות מתאימה.
         </p>
         <a href="mailto:info@as-traffic.co.il?subject=הגשת מועמדות כללית"
           aria-label="שלחו קורות חיים — הגשת מועמדות כללית"
-          style="display:inline-block;background:#272424;color:#fff;padding:0.85rem 2.25rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:1rem;transition:opacity 0.2s;"
+          style="display:inline-block;background:#F2521B;color:#fff;padding:0.85rem 2.25rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:1rem;transition:opacity 0.2s;"
           onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
           שלחו קורות חיים
         </a>
