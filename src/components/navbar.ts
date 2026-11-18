@@ -189,7 +189,7 @@ export function initNavbar(): void {
   try {
     const saved = JSON.parse(localStorage.getItem('a11y') || '{}')
     if (saved.fontLevel) { fontLevel = saved.fontLevel; document.documentElement.style.fontSize = `${100 + fontLevel * 10}%` }
-    if (saved.highContrast) { highContrast = true; document.body.style.filter = 'contrast(1.5) saturate(0)'; const b = document.getElementById('contrast-btn'); if (b) { b.style.background='#272424'; b.style.color='#fff'; b.setAttribute('aria-pressed','true') } }
+    if (saved.highContrast) { highContrast = true; document.documentElement.style.filter = 'contrast(1.5) saturate(0)'; const b = document.getElementById('contrast-btn'); if (b) { b.style.background='#272424'; b.style.color='#fff'; b.setAttribute('aria-pressed','true') } }
     if (saved.readableFont) { readableFont = true; document.body.style.fontFamily='Arial,sans-serif'; document.body.style.letterSpacing='0.03em'; document.body.style.lineHeight='1.9'; const b = document.getElementById('font-btn'); if (b) { b.style.background='#272424'; b.style.color='#fff'; b.setAttribute('aria-pressed','true') } }
     if (saved.underlineLinks) { underlineLinks = true; document.body.style.setProperty('--a11y-link-decoration','underline'); const style = document.getElementById('a11y-link-style') as HTMLStyleElement | null; if (style) style.textContent = 'a { text-decoration: underline !important; }'; const b = document.getElementById('underline-btn'); if (b) { b.style.background='#272424'; b.style.color='#fff'; b.setAttribute('aria-pressed','true') } }
     if (saved.stopAnimations) { stopAnimations = true; const style = document.getElementById('a11y-anim-style') as HTMLStyleElement | null; if (style) style.textContent = '*, *::before, *::after { animation: none !important; transition: none !important; }'; const b = document.getElementById('anim-btn'); if (b) { b.style.background='#272424'; b.style.color='#fff'; b.setAttribute('aria-pressed','true') } }
@@ -248,10 +248,10 @@ export function initNavbar(): void {
     highContrast = !highContrast
     const btn = document.getElementById('contrast-btn')
     if (highContrast) {
-      document.body.style.filter = 'contrast(1.5) saturate(0)'
+      document.documentElement.style.filter = 'contrast(1.5) saturate(0)'
       if (btn) { btn.style.background = '#272424'; btn.style.color = '#fff'; btn.setAttribute('aria-pressed', 'true') }
     } else {
-      document.body.style.filter = ''
+      document.documentElement.style.filter = ''
       if (btn) { btn.style.background = '#f5f5f5'; btn.style.color = '#272424'; btn.setAttribute('aria-pressed', 'false') }
     }
     saveA11yState()
@@ -305,7 +305,7 @@ export function initNavbar(): void {
   ;(window as any).resetAccessibility = () => {
     fontLevel = 0; highContrast = false; readableFont = false; underlineLinks = false; stopAnimations = false
     document.documentElement.style.fontSize = ''
-    document.body.style.filter = ''
+    document.documentElement.style.filter = ''
     document.body.style.fontFamily = ''
     document.body.style.letterSpacing = ''
     document.body.style.lineHeight = ''
