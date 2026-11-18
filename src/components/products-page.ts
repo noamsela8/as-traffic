@@ -101,11 +101,19 @@ export function createProductsPage(): string {
     </section>
 
     <!-- CTA -->
-    <section aria-label="פנייה לעזרה בבחירת מוצר" style="background:#fff;padding:4rem 2rem;text-align:center;border-top:1px solid #eee;">
-      <p style="color:#888;font-size:0.95rem;margin:0 0 0.5rem;">לא מצאתם מה שחיפשתם?</p>
-      <a href="/contact.html" style="color:#F2521B;font-weight:700;font-size:1rem;text-decoration:none;border-bottom:2px solid #F2521B;padding-bottom:2px;">
-        צרו איתנו קשר ונמצא פתרון מתאים
-      </a>
+    <section aria-label="פנייה לעזרה בבחירת מוצר" style="background:#272424;padding:4rem 2rem;text-align:center;">
+      <div style="max-width:600px;margin:0 auto;">
+        <h2 style="font-family:'Rubik',sans-serif;font-size:clamp(1.4rem,3vw,2rem);font-weight:900;color:#fff;margin:0 0 0.75rem;">
+          לא מצאתם את מה שחיפשתם?
+        </h2>
+        <p style="color:rgba(255,255,255,0.6);margin:0 0 1.5rem;">
+          יש לנו מגוון נוסף — צרו קשר ונמצא עבורכם את הפתרון המתאים.
+        </p>
+        <a href="/contact.html"
+          style="display:inline-block;background:#F2521B;color:#fff;padding:0.85rem 2rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:1rem;">
+          צרו קשר
+        </a>
+      </div>
     </section>
   `;
 }
