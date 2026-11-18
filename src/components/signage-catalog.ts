@@ -53,8 +53,10 @@ function renderCategoryCard(cat: CategoryCard): string {
       <div style="height:320px;overflow:hidden;position:relative;" ${clickAttr}>
         ${galleryHtml}
         <button type="button" aria-label="הצג תמונה מוגדלת של ${cat.name}"
-          onclick="event.stopPropagation();${hasMultiple ? `openSignageLightbox(document.getElementById('sng-slide-${cat.id}-'+((window._sngIdx&&window._sngIdx['${cat.id}'])||0))?.querySelector('img')?.src||'${mainImg}','${cat.name}')` : `openSignageLightbox('${mainImg}','${cat.name}')`}"
-          style="position:absolute;inset:0;z-index:5;background:transparent;border:none;cursor:zoom-in;width:100%;height:100%;"></button>
+          onclick="event.stopPropagation();openSignageLightbox('${cat.id}',${cat.images.length})"
+          style="position:absolute;inset:0;z-index:5;background:transparent;border:none;cursor:zoom-in;width:100%;height:100%;outline:none;box-shadow:none;"
+          onfocus="this.style.boxShadow='inset 0 0 0 3px #F2521B'"
+          onblur="this.style.boxShadow='none'"></button>
       </div>
       <!-- content -->
       <div style="padding:1.5rem;display:flex;flex-direction:column;flex:1;">
@@ -94,8 +96,10 @@ function renderSmallCard(p: SmallProduct): string {
       <div style="height:200px;overflow:hidden;position:relative;" ${clickAttr}>
         ${galleryHtml}
         <button type="button" aria-label="הצג תמונה מוגדלת של ${p.name}"
-          onclick="event.stopPropagation();openSignageLightbox(document.getElementById('sng-slide-${p.id}-'+((window._sngIdx&&window._sngIdx['${p.id}'])||0))?.querySelector('img')?.src||'${mainImg}','${p.name}')"
-          style="position:absolute;inset:0;z-index:5;background:transparent;border:none;cursor:zoom-in;width:100%;height:100%;"></button>
+          onclick="event.stopPropagation();openSignageLightbox('${p.id}',${p.images.length})"
+          style="position:absolute;inset:0;z-index:5;background:transparent;border:none;cursor:zoom-in;width:100%;height:100%;outline:none;box-shadow:none;"
+          onfocus="this.style.boxShadow='inset 0 0 0 3px #F2521B'"
+          onblur="this.style.boxShadow='none'"></button>
       </div>
       <!-- content -->
       <div style="padding:1.1rem;display:flex;flex-direction:column;flex:1;">
@@ -163,11 +167,24 @@ export function createSignageCatalog(): string {
 
   return `
     <!-- LIGHTBOX -->
-    <div id="signage-lightbox" role="dialog" aria-modal="true" aria-label="תצוגת תמונה מוגדלת" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.88);z-index:9999;align-items:center;justify-content:center;cursor:pointer;"
-      onclick="closeSignageLightbox()">
-      <button style="position:absolute;top:1.2rem;left:1.5rem;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer;line-height:1;" onclick="closeSignageLightbox()" aria-label="סגור תצוגה מוגדלת"><span aria-hidden="true">✕</span></button>
-      <img id="signage-lightbox-img" src="" alt="" style="max-width:90vw;max-height:85vh;object-fit:contain;border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,0.5);">
-      <p id="signage-lightbox-caption" style="position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);color:rgba(255,255,255,0.8);font-size:0.95rem;font-family:'Rubik',sans-serif;white-space:nowrap;"></p>
+    <div id="signage-lightbox" role="dialog" aria-modal="true" aria-label="תצוגת תמונה מוגדלת"
+      onclick="closeSignageLightbox()"
+      style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.88);z-index:9999;align-items:center;justify-content:center;padding:1rem;">
+      <div style="position:relative;max-width:90vw;max-height:90vh;" onclick="event.stopPropagation()">
+        <img id="signage-lightbox-img" src="" alt="" style="max-width:90vw;max-height:85vh;object-fit:contain;border-radius:8px;display:block;">
+        <p id="signage-lightbox-caption" style="color:#fff;text-align:center;font-family:'Rubik',sans-serif;font-weight:700;font-size:1rem;margin:0.75rem 0 0;"></p>
+        <!-- סגור -->
+        <button onclick="closeSignageLightbox()" aria-label="סגור תצוגה מוגדלת"
+          style="position:absolute;top:-1rem;left:-1rem;background:#F2521B;color:#fff;border:none;border-radius:50%;width:36px;height:36px;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1;"><span aria-hidden="true">✕</span></button>
+        <!-- חץ ימין — תמונה קודמת -->
+        <button id="slb-prev" onclick="slbNav(-1)" aria-label="תמונה קודמת"
+          style="position:absolute;top:50%;right:-3rem;transform:translateY(-50%);background:rgba(255,255,255,0.15);color:#fff;border:none;border-radius:50%;width:44px;height:44px;font-size:1.5rem;cursor:pointer;display:flex;align-items:center;justify-content:center;">›</button>
+        <!-- חץ שמאל — תמונה הבאה -->
+        <button id="slb-next" onclick="slbNav(1)" aria-label="תמונה הבאה"
+          style="position:absolute;top:50%;left:-3rem;transform:translateY(-50%);background:rgba(255,255,255,0.15);color:#fff;border:none;border-radius:50%;width:44px;height:44px;font-size:1.5rem;cursor:pointer;display:flex;align-items:center;justify-content:center;">‹</button>
+        <!-- מונה -->
+        <p id="slb-counter" style="color:rgba(255,255,255,0.5);text-align:center;font-size:0.8rem;margin:0.3rem 0 0;"></p>
+      </div>
     </div>
 
     <!-- HERO -->
@@ -251,15 +268,47 @@ export function initSignageCatalog(): void {
     }
   };
 
-  (window as any).openSignageLightbox = (src: string, caption: string) => {
-    const lb = document.getElementById('signage-lightbox');
+  // lightbox state
+  (window as any)._slbId = '';
+  (window as any)._slbTotal = 0;
+  (window as any)._slbCurIdx = 0;
+
+  function slbShow(idx: number) {
+    const id = (window as any)._slbId;
+    const total = (window as any)._slbTotal;
+    if (idx < 0) idx = total - 1;
+    if (idx >= total) idx = 0;
+    (window as any)._slbCurIdx = idx;
+    const src = document.getElementById(`sng-slide-${id}-${idx}`)?.querySelector('img')?.getAttribute('src')
+      || (document.querySelector(`button[onclick*="openSignageLightbox('${id}'"]`) as HTMLElement)?.closest('[role="article"]')?.querySelector('img')?.getAttribute('src') || '';
     const img = document.getElementById('signage-lightbox-img') as HTMLImageElement;
+    if (img && src) img.src = src;
+    const counter = document.getElementById('slb-counter');
+    if (counter) counter.textContent = total > 1 ? `${idx + 1} / ${total}` : '';
+    const prev = document.getElementById('slb-prev') as HTMLElement;
+    const next = document.getElementById('slb-next') as HTMLElement;
+    if (prev) prev.style.display = total > 1 ? 'flex' : 'none';
+    if (next) next.style.display = total > 1 ? 'flex' : 'none';
+  }
+
+  (window as any).slbNav = (dir: number) => {
+    slbShow((window as any)._slbCurIdx + dir);
+  };
+
+  (window as any).openSignageLightbox = (id: string, total: number) => {
+    const lb = document.getElementById('signage-lightbox') as HTMLElement;
     const cap = document.getElementById('signage-lightbox-caption');
-    if (!lb || !img) return;
-    img.src = src;
-    if (cap) cap.textContent = caption;
+    if (!lb) return;
+    const btn = document.querySelector(`button[onclick*="openSignageLightbox('${id}'"]`) as HTMLElement;
+    const productName = btn?.getAttribute('aria-label')?.replace('הצג תמונה מוגדלת של ', '') || '';
+    if (cap) cap.textContent = productName;
+    (window as any)._slbId = id;
+    (window as any)._slbTotal = total;
+    const curIdx = (window as any)._sngIdx?.[id] || 0;
+    slbShow(curIdx);
     lb.style.display = 'flex';
     document.body.style.overflow = 'hidden';
+    setTimeout(() => (document.querySelector('#signage-lightbox button[aria-label="סגור תצוגה מוגדלת"]') as HTMLElement)?.focus(), 50);
   };
 
   (window as any).closeSignageLightbox = () => {
@@ -269,6 +318,10 @@ export function initSignageCatalog(): void {
   };
 
   document.addEventListener('keydown', (e: KeyboardEvent) => {
-    if (e.key === 'Escape') (window as any).closeSignageLightbox?.();
+    const lb = document.getElementById('signage-lightbox');
+    if (!lb || lb.style.display === 'none') return;
+    if (e.key === 'Escape') (window as any).closeSignageLightbox();
+    if (e.key === 'ArrowLeft') (window as any).slbNav(1);
+    if (e.key === 'ArrowRight') (window as any).slbNav(-1);
   });
 }

@@ -167,8 +167,10 @@ function renderProductCard(product: Product, index: number): string {
         <!-- כפתור נגיש לפתיחת lightbox — שקוף, מכסה את כל התמונה, z-index נמוך מהחצים -->
         <button type="button"
           aria-label="הצג תמונה מוגדלת של ${product.name}"
-          onclick="event.stopPropagation();openLightbox(document.getElementById('sgslide-${galleryId}-'+((window._sgIdx&&window._sgIdx['${galleryId}'])||0))?.querySelector('img')?.src||'${mainImg}','${product.name}')"
-          style="position:absolute;inset:0;z-index:5;background:transparent;border:none;cursor:zoom-in;width:100%;height:100%;"></button>
+          onclick="event.stopPropagation();openLightbox('${galleryId}',${product.images.length})"
+          style="position:absolute;inset:0;z-index:5;background:transparent;border:none;cursor:zoom-in;width:100%;height:100%;box-shadow:none;outline:none;"
+          onfocus="this.style.boxShadow='inset 0 0 0 3px #F2521B'"
+          onblur="this.style.boxShadow='none'"></button>
         <span style="position:absolute;bottom:0.7rem;left:2.5rem;background:rgba(0,0,0,0.45);color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-size:0.85rem;z-index:10;" aria-hidden="true">🔍</span>
         ${arrows}
         ${dots}
@@ -203,9 +205,20 @@ export function createSafetyCatalog(): string {
           style="max-width:90vw;max-height:85vh;object-fit:contain;border-radius:8px;display:block;">
         <p id="lightbox-title"
           style="color:#fff;text-align:center;font-family:'Rubik',sans-serif;font-weight:700;font-size:1rem;margin:0.75rem 0 0;"></p>
+        <!-- סגור -->
         <button onclick="closeLightbox()"
           aria-label="סגור תצוגה מוגדלת"
           style="position:absolute;top:-1rem;left:-1rem;background:#F2521B;color:#fff;border:none;border-radius:50%;width:36px;height:36px;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1;"><span aria-hidden="true">✕</span></button>
+        <!-- חץ ימין — תמונה קודמת -->
+        <button id="lb-prev" onclick="lbNav(-1)"
+          aria-label="תמונה קודמת"
+          style="position:absolute;top:50%;right:-3rem;transform:translateY(-50%);background:rgba(255,255,255,0.15);color:#fff;border:none;border-radius:50%;width:44px;height:44px;font-size:1.5rem;cursor:pointer;display:flex;align-items:center;justify-content:center;">›</button>
+        <!-- חץ שמאל — תמונה הבאה -->
+        <button id="lb-next" onclick="lbNav(1)"
+          aria-label="תמונה הבאה"
+          style="position:absolute;top:50%;left:-3rem;transform:translateY(-50%);background:rgba(255,255,255,0.15);color:#fff;border:none;border-radius:50%;width:44px;height:44px;font-size:1.5rem;cursor:pointer;display:flex;align-items:center;justify-content:center;">‹</button>
+        <!-- מונה תמונות -->
+        <p id="lb-counter" style="color:rgba(255,255,255,0.5);text-align:center;font-size:0.8rem;margin:0.3rem 0 0;"></p>
       </div>
     </div>
 
@@ -272,17 +285,49 @@ export function initSafetyCatalog(): void {
     }
   };
 
-  // lightbox
-  (window as any).openLightbox = (src: string, title: string) => {
-    const lb = document.getElementById('safety-lightbox') as HTMLElement;
+  // lightbox — state
+  (window as any)._lbGalleryId = '';
+  (window as any)._lbTotal = 0;
+  (window as any)._lbCurIdx = 0;
+
+  function lbShow(idx: number) {
+    const galleryId = (window as any)._lbGalleryId;
+    const total = (window as any)._lbTotal;
+    if (idx < 0) idx = total - 1;
+    if (idx >= total) idx = 0;
+    (window as any)._lbCurIdx = idx;
+    const src = document.getElementById(`sgslide-${galleryId}-${idx}`)?.querySelector('img')?.getAttribute('src') || '';
     const img = document.getElementById('lightbox-img') as HTMLImageElement;
+    if (img) { img.src = src; }
+    const counter = document.getElementById('lb-counter');
+    if (counter) counter.textContent = total > 1 ? `${idx + 1} / ${total}` : '';
+    // הצג/הסתר חצים
+    const prev = document.getElementById('lb-prev') as HTMLElement;
+    const next = document.getElementById('lb-next') as HTMLElement;
+    if (prev) prev.style.display = total > 1 ? 'flex' : 'none';
+    if (next) next.style.display = total > 1 ? 'flex' : 'none';
+  }
+
+  (window as any).lbNav = (dir: number) => {
+    lbShow((window as any)._lbCurIdx + dir);
+  };
+
+  (window as any).openLightbox = (galleryId: string, total: number) => {
+    const lb = document.getElementById('safety-lightbox') as HTMLElement;
     const ttl = document.getElementById('lightbox-title') as HTMLElement;
-    if (!lb || !img || !ttl) return;
-    img.src = src;
-    img.alt = title;
-    ttl.textContent = title;
+    if (!lb) return;
+    // מצא את שם המוצר מה-aria-label של הכפתור
+    const btn = document.querySelector(`button[onclick*="openLightbox('${galleryId}'"]`) as HTMLElement;
+    const productName = btn?.getAttribute('aria-label')?.replace('הצג תמונה מוגדלת של ', '') || '';
+    if (ttl) ttl.textContent = productName;
+    (window as any)._lbGalleryId = galleryId;
+    (window as any)._lbTotal = total;
+    const curIdx = (window as any)._sgIdx?.[galleryId] || 0;
+    lbShow(curIdx);
     lb.style.display = 'flex';
     document.body.style.overflow = 'hidden';
+    // פוקוס על כפתור סגור
+    setTimeout(() => (document.querySelector('#safety-lightbox button[aria-label="סגור תצוגה מוגדלת"]') as HTMLElement)?.focus(), 50);
   };
 
   (window as any).closeLightbox = () => {
@@ -292,6 +337,10 @@ export function initSafetyCatalog(): void {
   };
 
   document.addEventListener('keydown', (e: KeyboardEvent) => {
+    const lb = document.getElementById('safety-lightbox');
+    if (!lb || lb.style.display === 'none') return;
     if (e.key === 'Escape') (window as any).closeLightbox();
+    if (e.key === 'ArrowLeft') (window as any).lbNav(1);
+    if (e.key === 'ArrowRight') (window as any).lbNav(-1);
   });
 }
