@@ -3,7 +3,7 @@ import { createNavbar, initNavbar } from './components/navbar'
 import { createFooter } from './components/footer'
 
 const content = `
-  <main id="main-content" style="background:#f9f9f9;padding:5rem 2rem 6rem;">
+  <main id="main-content" role="main" style="background:#f9f9f9;padding:5rem 2rem 6rem;">
     <div style="max-width:820px;margin:0 auto;">
 
       <a href="/" style="color:#595959;font-size:0.85rem;text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:2rem;">

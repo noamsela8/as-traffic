@@ -7,7 +7,7 @@ const content = `
     <div style="max-width:820px;margin:0 auto;">
 
       <a href="/" style="color:#595959;font-size:0.85rem;text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:2rem;">
-        <span aria-hidden="true">→</span> חזרה לעמוד הבית
+        <span aria-hidden="true">←</span> חזרה לעמוד הבית
       </a>
 
       <h1 style="font-family:'Rubik',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:#272424;margin:0 0 0.5rem;">

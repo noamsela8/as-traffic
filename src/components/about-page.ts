@@ -232,4 +232,4 @@ export function createAboutPage(): string {
     </section>
 
   `
-}
+} 

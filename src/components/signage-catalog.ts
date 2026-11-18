@@ -159,7 +159,7 @@ export function createSignageCatalog(): string {
     <!-- LIGHTBOX -->
     <div id="signage-lightbox" role="dialog" aria-modal="true" aria-label="תצוגת תמונה מוגדלת" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.88);z-index:9999;align-items:center;justify-content:center;cursor:pointer;"
       onclick="closeSignageLightbox()">
-      <button style="position:absolute;top:1.2rem;left:1.5rem;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer;line-height:1;" onclick="closeSignageLightbox()">✕</button>
+      <button style="position:absolute;top:1.2rem;left:1.5rem;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer;line-height:1;" onclick="closeSignageLightbox()" aria-label="סגור תצוגה מוגדלת"><span aria-hidden="true">✕</span></button>
       <img id="signage-lightbox-img" src="" alt="" style="max-width:90vw;max-height:85vh;object-fit:contain;border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,0.5);">
       <p id="signage-lightbox-caption" style="position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);color:rgba(255,255,255,0.8);font-size:0.95rem;font-family:'Rubik',sans-serif;white-space:nowrap;"></p>
     </div>
@@ -168,7 +168,7 @@ export function createSignageCatalog(): string {
     <section id="main-content" role="main" style="background:#272424;padding:5rem 2rem 3.5rem;text-align:center;">
       <div style="max-width:700px;margin:0 auto;">
         <a href="/products.html" style="color:rgba(255,255,255,0.5);font-size:0.85rem;text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:1.5rem;">
-          → חזרה למוצרים
+          <span aria-hidden="true">←</span> חזרה למוצרים
         </a>
         <p style="color:#F2521B;font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;margin:0 0 0.75rem;">קטלוג מוצרים</p>
         <h1 style="font-family:'Rubik',sans-serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:900;color:#fff;margin:0 0 1rem;line-height:1.2;">
