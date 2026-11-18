@@ -160,14 +160,17 @@ function renderProductCard(product: Product, index: number): string {
       onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 32px rgba(0,0,0,0.12)';"
       onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 12px rgba(0,0,0,0.07)';">
       <!-- תמונה / גלריה -->
-      <div style="height:260px;overflow:hidden;position:relative;cursor:pointer;"
-        onclick="openLightbox(document.getElementById('sgslide-${galleryId}-'+((window._sgIdx&&window._sgIdx['${galleryId}'])||0))?.querySelector('img')?.src||'${mainImg}','${product.name}')">
+      <button type="button"
+        aria-label="הצג תמונה מוגדלת של ${product.name}"
+        onclick="openLightbox(document.getElementById('sgslide-${galleryId}-'+((window._sgIdx&&window._sgIdx['${galleryId}'])||0))?.querySelector('img')?.src||'${mainImg}','${product.name}')"
+        style="height:260px;overflow:hidden;position:relative;cursor:pointer;width:100%;border:none;padding:0;background:none;display:block;">
+        <span style="position:absolute;inset:0;z-index:0;"></span>
         ${gallerySlides}
-        <span style="position:absolute;top:1rem;right:1rem;background:rgba(242,82,27,0.9);color:#fff;font-size:0.7rem;font-weight:700;padding:0.2rem 0.6rem;border-radius:4px;z-index:10;">${String(index + 1).padStart(2,'0')}</span>
-        <span style="position:absolute;bottom:0.7rem;left:2.5rem;background:rgba(0,0,0,0.45);color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-size:0.85rem;z-index:10;">🔍</span>
+        <span style="position:absolute;top:1rem;right:1rem;background:rgba(242,82,27,0.9);color:#fff;font-size:0.7rem;font-weight:700;padding:0.2rem 0.6rem;border-radius:4px;z-index:10;" aria-hidden="true">${String(index + 1).padStart(2,'0')}</span>
+        <span style="position:absolute;bottom:0.7rem;left:2.5rem;background:rgba(0,0,0,0.45);color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-size:0.85rem;z-index:10;" aria-hidden="true">🔍</span>
         ${arrows}
         ${dots}
-      </div>
+      </button>
       <!-- תוכן -->
       <div style="padding:1.25rem;display:flex;flex-direction:column;flex:1;">
         <h3 style="font-family:'Rubik',sans-serif;font-size:1.1rem;font-weight:800;color:#272424;margin:0 0 0.5rem;">${product.name}</h3>

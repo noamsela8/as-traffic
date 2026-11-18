@@ -1,5 +1,17 @@
 export function createNavbar(): string {
   return `
+    <style>
+      /* focus visible — נגישות מקלדת */
+      :focus-visible {
+        outline: 3px solid #F2521B !important;
+        outline-offset: 2px !important;
+      }
+      a:focus-visible, button:focus-visible {
+        outline: 3px solid #F2521B !important;
+        outline-offset: 3px !important;
+        border-radius: 3px;
+      }
+    </style>
     <!-- כפתור דלג לתוכן -->
     <a href="#main-content"
       style="position:fixed;top:-100px;right:1rem;z-index:9999;background:#F2521B;color:#fff;padding:0.6rem 1.2rem;border-radius:0 0 8px 8px;font-family:'Rubik',sans-serif;font-weight:700;font-size:0.9rem;text-decoration:none;transition:top 0.2s;"

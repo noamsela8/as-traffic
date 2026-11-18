@@ -50,9 +50,10 @@ function renderCategoryCard(cat: CategoryCard): string {
       onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 14px 36px rgba(0,0,0,0.13)';"
       onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 16px rgba(0,0,0,0.08)';">
       <!-- gallery -->
-      <div style="height:320px;overflow:hidden;position:relative;cursor:pointer;" ${clickAttr}>
+      <button type="button" aria-label="הצג תמונה מוגדלת של ${cat.name}" ${clickAttr}
+        style="height:320px;overflow:hidden;position:relative;cursor:pointer;width:100%;border:none;padding:0;background:none;display:block;">
         ${galleryHtml}
-      </div>
+      </button>
       <!-- content -->
       <div style="padding:1.5rem;display:flex;flex-direction:column;flex:1;">
         <h3 style="font-family:'Rubik',sans-serif;font-size:1.4rem;font-weight:900;color:#272424;margin:0 0 0.6rem;">${cat.name}</h3>
@@ -88,9 +89,10 @@ function renderSmallCard(p: SmallProduct): string {
       onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 28px rgba(0,0,0,0.11)';"
       onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 12px rgba(0,0,0,0.07)';">
       <!-- image -->
-      <div style="height:200px;overflow:hidden;position:relative;cursor:pointer;" ${clickAttr}>
+      <button type="button" aria-label="הצג תמונה מוגדלת של ${p.name}" ${clickAttr}
+        style="height:200px;overflow:hidden;position:relative;cursor:pointer;width:100%;border:none;padding:0;background:none;display:block;">
         ${galleryHtml}
-      </div>
+      </button>
       <!-- content -->
       <div style="padding:1.1rem;display:flex;flex-direction:column;flex:1;">
         <h3 style="font-family:'Rubik',sans-serif;font-size:1rem;font-weight:800;color:#272424;margin:0 0 0.4rem;">${p.name}</h3>

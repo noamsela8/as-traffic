@@ -187,6 +187,13 @@ export function createCareersPage(): string {
   const jobCards = jobs.map((job, i) => renderJob(job, i)).join('');
 
   return `
+    <style>
+      .job-card button:focus-visible,
+      .job-card button:focus {
+        outline: 3px solid #F2521B !important;
+        outline-offset: 2px !important;
+      }
+    </style>
     <!-- HERO -->
     <section id="main-content" role="main" aria-label="קריירה — הצטרפו לצוות" style="background:#272424;padding:6rem 2rem 4rem;text-align:center;">
       <div style="max-width:700px;margin:0 auto;">
