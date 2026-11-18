@@ -3,7 +3,7 @@ export function createHero(): string {
       <style>
         @media(min-width:640px){.hero-btns{flex-direction:row!important;align-items:center!important}}
       </style>
-      <section id="main-content" style="position:relative;width:100%;height:100vh;min-height:600px;overflow:hidden;display:flex;align-items:center;" aria-label="אזור פתיחה - א.ס הסדרי תנועה">
+      <section id="main-content" role="main" style="position:relative;width:100%;height:100vh;min-height:600px;overflow:hidden;display:flex;align-items:center;" aria-label="אזור פתיחה - א.ס הסדרי תנועה">
 
         <video id="hero-video" autoplay muted loop playsinline preload="auto"
           style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;"
