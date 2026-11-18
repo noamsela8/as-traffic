@@ -108,24 +108,6 @@ export function createAboutPage(): string {
             הניסיון, האמינות והמחויבות שלנו הם הבסיס לכל עבודה שאנחנו עושים.
           </p>
 
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2.5rem;" class="about-stats-grid">
-            <div style="border-right:3px solid #F2521B;padding-right:1rem;">
-              <div style="font-family:'Rubik',sans-serif;font-size:2.2rem;font-weight:900;color:#272424;line-height:1;">25+</div>
-              <div style="font-size:0.85rem;color:#7a7a7a;margin-top:0.25rem;">שנות ניסיון</div>
-            </div>
-            <div style="border-right:3px solid #F2521B;padding-right:1rem;">
-              <div style="font-family:'Rubik',sans-serif;font-size:2.2rem;font-weight:900;color:#272424;line-height:1;">500+</div>
-              <div style="font-size:0.85rem;color:#7a7a7a;margin-top:0.25rem;">פרויקטים</div>
-            </div>
-            <div style="border-right:3px solid #F2521B;padding-right:1rem;">
-              <div style="font-family:'Rubik',sans-serif;font-size:2.2rem;font-weight:900;color:#272424;line-height:1;">200+</div>
-              <div style="font-size:0.85rem;color:#7a7a7a;margin-top:0.25rem;">לקוחות</div>
-            </div>
-            <div style="border-right:3px solid #F2521B;padding-right:1rem;">
-              <div style="font-family:'Rubik',sans-serif;font-size:2.2rem;font-weight:900;color:#272424;line-height:1;">ארצי</div>
-              <div style="font-size:0.85rem;color:#7a7a7a;margin-top:0.25rem;">פריסת שירות</div>
-            </div>
-          </div>
         </div>
 
         <!-- תמונה -->

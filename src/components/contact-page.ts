@@ -195,6 +195,11 @@ export function createContactPage(): string {
             ></textarea>
           </div>
 
+          <!-- Privacy notice -->
+          <p style="font-size:0.82rem;color:#888;margin:0 0 1rem;line-height:1.6;">
+            בשליחת הטופס אתה מסכים ל<a href="/privacy.html" style="color:#F2521B;text-decoration:underline;">מדיניות הפרטיות</a> שלנו. פנייתך תועבר אלינו באמצעות Web3Forms.
+          </p>
+
           <!-- Submit button -->
           <button
             type="submit"
@@ -279,10 +284,10 @@ export function createContactPage(): string {
               </div>
               <div>
                 <div style="font-family: 'Rubik', sans-serif; font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-bottom: 3px;">אימייל</div>
-                <a href="mailto:office@astraffic.co.il" aria-label="שלח אימייל ל: office@astraffic.co.il" style="
+                <a href="mailto:office@as-traffic.co.il" aria-label="שלח אימייל ל: office@as-traffic.co.il" style="
                   font-family: 'Rubik', sans-serif; font-size: 0.95rem; font-weight: 600;
                   color: #fff; text-decoration: none; direction: ltr; display: block;
-                ">office@astraffic.co.il</a>
+                ">office@as-traffic.co.il</a>
               </div>
             </div>
 
