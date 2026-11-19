@@ -33,7 +33,7 @@ export function createAbout(): string {
             המומחיות והאיכות שלנו הן הדבר שעליו אתם יכולים לסמוך — כדי שתוכלו להתחיל כל פרויקט חדש בביטחון מלא ובראש שקט.
           </p>
 
-          <a href="/about.html" class="cta-btn" style="background:#F2521B;color:white;padding:0.875rem 2rem;font-family:'Rubik',sans-serif;font-weight:700;font-size:0.9rem;text-transform:uppercase;letter-spacing:0.06em;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;"
+          <a href="/about.html" class="cta-btn" style="background:#F2521B;color:white;padding:0.875rem 2rem;font-family:'Rubik',sans-serif;font-weight:700;font-size:1.2rem;text-transform:uppercase;letter-spacing:0.06em;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;"
             onmouseover="this.style.background='#d4511a'"
             onmouseout="this.style.background='#F2521B'">
             קרא עוד עלינו
