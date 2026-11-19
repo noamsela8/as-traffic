@@ -119,7 +119,7 @@ const content = `
       </div>
 
       <div style="background:#272424;border-radius:12px;padding:2rem 2.5rem;">
-        <p style="color:rgba(255,255,255,0.7);font-size:0.85rem;line-height:1.8;margin:0;">
+        <p style="color:rgba(255,255,255,0.85);font-size:0.85rem;line-height:1.8;margin:0;">
           החברה שומרת לעצמה את הזכות לעדכן תנאי שימוש אלה בכל עת. שינויים ייכנסו לתוקף עם פרסומם באתר. המשך השימוש באתר לאחר פרסום שינויים מהווה הסכמה לתנאים המעודכנים. תאריך עדכון אחרון: נובמבר 2026.
         </p>
       </div>

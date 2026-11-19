@@ -26,7 +26,7 @@ export function createPartners(): string {
         padding:1rem 1.5rem;
         flex-shrink:0;
       ">
-        <img src="/assets/images/logos/${p.file}" alt="${p.name}" style="max-width:120px;max-height:55px;width:auto;height:auto;object-fit:contain;" />
+        <img src="/assets/images/logos/${p.file}" alt="${p.name}" loading="lazy" style="max-width:120px;max-height:55px;width:auto;height:auto;object-fit:contain;" />
       </div>
     `
 

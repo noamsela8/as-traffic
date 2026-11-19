@@ -88,7 +88,7 @@
   .mobile-nav-link:hover { color: #F2521B; }
 
   .footer-link {
-    color: rgba(255,255,255,0.5);
+    color: rgba(255,255,255,0.75);
     font-size: 0.875rem;
     transition: color 0.3s;
     display: block;

@@ -6,6 +6,7 @@ export function createHero(): string {
       <section id="main-content" role="main" style="position:relative;width:100%;height:100vh;min-height:600px;overflow:hidden;display:flex;align-items:center;" aria-label="אזור פתיחה - א.ס הסדרי תנועה">
 
         <video id="hero-video" autoplay muted loop playsinline preload="auto"
+          poster="/hero-poster.webp"
           style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;"
           aria-hidden="true"
           tabindex="-1">

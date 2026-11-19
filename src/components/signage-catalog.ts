@@ -2,11 +2,11 @@
 
 function sgGallery(id: string, images: string[]): string {
   if (images.length === 1) {
-    return `<img src="${images[0]}" alt="" style="width:100%;height:100%;object-fit:cover;">`;
+    return `<img src="${images[0]}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;">`;
   }
   const slides = images.map((src, i) => `
     <div id="sng-slide-${id}-${i}" style="position:absolute;inset:0;opacity:${i===0?1:0};z-index:${i===0?1:0};transition:opacity 0.35s;">
-      <img src="${src}" alt="" style="width:100%;height:100%;object-fit:cover;">
+      <img src="${src}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
     </div>`).join('');
 
   const dots = images.map((_, i) => `
@@ -183,21 +183,21 @@ export function createSignageCatalog(): string {
         <button id="slb-next" onclick="slbNav(1)" aria-label="תמונה הבאה"
           style="position:absolute;top:50%;left:-3rem;transform:translateY(-50%);background:rgba(255,255,255,0.15);color:#fff;border:none;border-radius:50%;width:44px;height:44px;font-size:1.5rem;cursor:pointer;display:flex;align-items:center;justify-content:center;">‹</button>
         <!-- מונה -->
-        <p id="slb-counter" style="color:rgba(255,255,255,0.5);text-align:center;font-size:0.8rem;margin:0.3rem 0 0;"></p>
+        <p id="slb-counter" style="color:rgba(255,255,255,0.8);text-align:center;font-size:0.8rem;margin:0.3rem 0 0;"></p>
       </div>
     </div>
 
     <!-- HERO -->
     <section id="main-content" role="main" style="background:#272424;padding:5rem 2rem 3.5rem;text-align:center;">
       <div style="max-width:700px;margin:0 auto;">
-        <a href="/products.html" style="color:rgba(255,255,255,0.5);font-size:0.85rem;text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:1.5rem;">
+        <a href="/products.html" style="color:rgba(255,255,255,0.8);font-size:0.85rem;text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:1.5rem;">
           <span aria-hidden="true">←</span> חזרה למוצרים
         </a>
         <p style="color:#F2521B;font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;margin:0 0 0.75rem;">קטלוג מוצרים</p>
         <h1 style="font-family:'Rubik',sans-serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:900;color:#fff;margin:0 0 1rem;line-height:1.2;">
           שילוט ותמרור
         </h1>
-        <p style="color:rgba(255,255,255,0.6);font-size:1rem;line-height:1.7;margin:0;">
+        <p style="color:rgba(255,255,255,0.8);font-size:1rem;line-height:1.7;margin:0;">
           תמרורים תקניים, שלטי ענק ושילוט מותאם אישית — ייצור והתקנה מקצועית בפריסה ארצית.
         </p>
       </div>
@@ -228,7 +228,7 @@ export function createSignageCatalog(): string {
         <h2 style="font-family:'Rubik',sans-serif;font-size:clamp(1.4rem,3vw,2rem);font-weight:900;color:#fff;margin:0 0 0.75rem;">
           צריכים שילוט מותאם אישית?
         </h2>
-        <p style="color:rgba(255,255,255,0.6);margin:0 0 1.5rem;">
+        <p style="color:rgba(255,255,255,0.8);margin:0 0 1.5rem;">
           נתכנן ונייצר עבורכם פתרון שילוט מקצועי ומותאם לצרכים שלכם.
         </p>
         <a href="/contact.html"

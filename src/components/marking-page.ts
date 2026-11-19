@@ -86,7 +86,7 @@ export function createMarkingPage(): string {
     if (images.length === 1) {
       return `
         <div style="border-radius:16px;overflow:hidden;height:400px;">
-          <img src="${images[0]}" alt="" aria-hidden="true" style="width:100%;height:100%;object-fit:cover;display:block;" />
+          <img src="${images[0]}" alt="" aria-hidden="true" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" />
         </div>`;
     }
 
@@ -94,7 +94,7 @@ export function createMarkingPage(): string {
 
     const slides = images.map((src, idx) =>
       `<div id="mslide-${id}-${idx}" style="position:absolute;inset:0;opacity:${idx === 0 ? '1' : '0'};z-index:${idx === 0 ? '1' : '0'};transition:opacity 0.5s ease;pointer-events:none;" aria-hidden="true">
-        <img src="${src}" alt="" aria-hidden="true" style="width:100%;height:100%;object-fit:cover;display:block;" />
+        <img src="${src}" alt="" aria-hidden="true" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" />
       </div>`
     ).join('');
 

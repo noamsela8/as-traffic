@@ -135,7 +135,7 @@ function renderProductCard(product: Product, index: number): string {
     <div id="sgslide-${galleryId}-${i}"
       style="position:absolute;inset:0;transition:opacity 0.4s;opacity:${i === 0 ? '1' : '0'};z-index:${i === 0 ? '1' : '0'};">
       <img src="${src}" alt="${product.name}"
-        style="width:100%;height:100%;object-fit:cover;display:block;">
+        loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
     </div>`).join('');
 
   const dots = hasGallery ? `
@@ -218,21 +218,21 @@ export function createSafetyCatalog(): string {
           aria-label="תמונה הבאה"
           style="position:absolute;top:50%;left:-3rem;transform:translateY(-50%);background:rgba(255,255,255,0.15);color:#fff;border:none;border-radius:50%;width:44px;height:44px;font-size:1.5rem;cursor:pointer;display:flex;align-items:center;justify-content:center;">‹</button>
         <!-- מונה תמונות -->
-        <p id="lb-counter" style="color:rgba(255,255,255,0.5);text-align:center;font-size:0.8rem;margin:0.3rem 0 0;"></p>
+        <p id="lb-counter" style="color:rgba(255,255,255,0.8);text-align:center;font-size:0.8rem;margin:0.3rem 0 0;"></p>
       </div>
     </div>
 
     <!-- HERO -->
     <section id="main-content" role="main" style="background:#272424;padding:5rem 2rem 3.5rem;text-align:center;">
       <div style="max-width:700px;margin:0 auto;">
-        <a href="/products.html" style="color:rgba(255,255,255,0.5);font-size:0.85rem;text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:1.5rem;">
+        <a href="/products.html" style="color:rgba(255,255,255,0.8);font-size:0.85rem;text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:1.5rem;">
           <span aria-hidden="true">←</span> חזרה למוצרים
         </a>
         <p style="color:#F2521B;font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;margin:0 0 0.75rem;">קטלוג מוצרים</p>
         <h1 style="font-family:'Rubik',sans-serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:900;color:#fff;margin:0 0 1rem;line-height:1.2;">
           אביזרי בטיחות
         </h1>
-        <p style="color:rgba(255,255,255,0.6);font-size:1rem;line-height:1.7;margin:0;">
+        <p style="color:rgba(255,255,255,0.8);font-size:1rem;line-height:1.7;margin:0;">
           מגוון מוצרי בטיחות לתשתיות הכביש, לחניונים ולאתרי עבודה — הכל בפריסה ארצית.
         </p>
       </div>
@@ -253,7 +253,7 @@ export function createSafetyCatalog(): string {
         <h2 style="font-family:'Rubik',sans-serif;font-size:clamp(1.4rem,3vw,2rem);font-weight:900;color:#fff;margin:0 0 0.75rem;">
           לא מצאתם את מה שחיפשתם?
         </h2>
-        <p style="color:rgba(255,255,255,0.6);margin:0 0 1.5rem;">
+        <p style="color:rgba(255,255,255,0.8);margin:0 0 1.5rem;">
           יש לנו מגוון נוסף — צרו קשר ונמצא עבורכם את הפתרון המתאים.
         </p>
         <a href="/contact.html"

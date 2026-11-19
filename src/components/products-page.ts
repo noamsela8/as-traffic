@@ -33,7 +33,7 @@ export function createProductsPage(): string {
               <!-- תמונה עליונה -->
               <div style="height:220px;overflow:hidden;position:relative;">
                 <img src="/assets/images/services/safety-equipment.webp" alt="תמונה של אביזרי בטיחות לתשתית הדרך"
-                  style="width:100%;height:100%;object-fit:cover;display:block;">
+                  loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
                 <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(39,36,36,0.35) 0%,transparent 60%);" aria-hidden="true"></div>
               </div>
               <!-- תוכן -->
@@ -69,7 +69,7 @@ export function createProductsPage(): string {
               <!-- תמונה עליונה -->
               <div style="height:220px;overflow:hidden;position:relative;">
                 <img src="/assets/images/services/signage.webp" alt="תמונה של שלטים ותמרורי דרך"
-                  style="width:100%;height:100%;object-fit:cover;display:block;">
+                  loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
                 <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(39,36,36,0.35) 0%,transparent 60%);" aria-hidden="true"></div>
               </div>
               <!-- תוכן -->

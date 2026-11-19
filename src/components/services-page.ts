@@ -126,7 +126,7 @@ export function createServicesPage(): string {
     if (images.length === 1) {
       return `
         <div style="border-radius:16px;overflow:hidden;height:420px;">
-          <img src="${images[0]}" alt="" aria-hidden="true" style="width:100%;height:100%;object-fit:cover;display:block;" />
+          <img src="${images[0]}" alt="" aria-hidden="true" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" />
         </div>`;
     }
 
@@ -143,7 +143,7 @@ export function createServicesPage(): string {
 
     const slides = images.map((src, idx) =>
       `<div id="slide-${serviceId}-${idx}" style="position:absolute;inset:0;opacity:${idx === 0 ? '1' : '0'};z-index:${idx === 0 ? '1' : '0'};transition:opacity 0.5s ease;pointer-events:none;" aria-hidden="true">
-        <img src="${src}" alt="" aria-hidden="true" style="width:100%;height:100%;object-fit:cover;display:block;" />
+        <img src="${src}" alt="" aria-hidden="true" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" />
       </div>`
     ).join('');
 
@@ -199,7 +199,7 @@ export function createServicesPage(): string {
     const textBlock = `
       <div style="display:flex;flex-direction:column;justify-content:center;gap:1.5rem;">
         <div style="display:flex;align-items:center;gap:1rem;">
-          <img src="/assets/images/icons/kiskush-orange.svg" alt="" aria-hidden="true" style="width:48px;height:48px;">
+          <img src="/assets/images/icons/kiskush-orange.svg" alt="" aria-hidden="true" loading="lazy" style="width:48px;height:48px;">
           <div>
             <p style="color:#F2521B;font-size:0.85rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin:0 0 0.25rem;" aria-hidden="true">${String(i + 1).padStart(2,'0')}</p>
             <h2 style="font-family:'Rubik',sans-serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;color:#272424;margin:0;line-height:1.2;">${s.title}</h2>
@@ -268,7 +268,7 @@ export function createServicesPage(): string {
           פתרונות מקצועיים לכל<br>
           <span style="color:#F2521B;">צורכי הדרך והתשתית</span>
         </h1>
-        <p style="color:rgba(255,255,255,0.7);font-size:1.1rem;line-height:1.75;margin:0 0 2.5rem;">
+        <p style="color:rgba(255,255,255,0.85);font-size:1.1rem;line-height:1.75;margin:0 0 2.5rem;">
           א.ס הסדרי תנועה מציעה מגוון שירותים מקצועיים – מהסדרי תנועה ופקחים מוסמכים ועד לשילוט, צביעה ואביזרי בטיחות – הכל תחת קורת גג אחת.
         </p>
         <nav aria-label="ניווט מהיר לפי שירות" style="display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:center;">
