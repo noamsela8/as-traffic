@@ -109,7 +109,7 @@ export function createServicesGrid(): string {
           <!-- כפתור לכל השירותים -->
           <div style="text-align:center;margin-top:3rem;">
             <a href="/services.html" class="cta-btn"
-              style="background:#F2521B;color:white;padding:0.875rem 2.5rem;font-family:'Rubik',sans-serif;font-weight:700;font-size:0.9rem;text-transform:uppercase;letter-spacing:0.06em;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;border-radius:4px;"
+              style="background:#F2521B;color:white;padding:0.875rem 2.5rem;font-family:'Rubik',sans-serif;font-weight:700;font-size:1.2rem;text-transform:uppercase;letter-spacing:0.06em;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;border-radius:4px;"
               onmouseover="this.style.background='#d4511a'"
               onmouseout="this.style.background='#F2521B'">
               לכל השירותים
