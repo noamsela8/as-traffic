@@ -110,7 +110,7 @@ export function createProductsPage(): string {
           יש לנו מגוון נוסף — צרו קשר ונמצא עבורכם את הפתרון המתאים.
         </p>
         <a href="/contact.html"
-          style="display:inline-block;background:#F2521B;color:#fff;padding:0.85rem 2rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:1rem;">
+          style="display:inline-block;background:#F2521B;color:#fff;padding:0.85rem 2rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:1.2rem;">
           צרו קשר
         </a>
       </div>

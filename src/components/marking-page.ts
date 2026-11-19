@@ -147,7 +147,7 @@ export function createMarkingPage(): string {
         <p style="color:#555;line-height:1.8;font-size:1rem;margin:0;">${t.description}</p>
         <div>
           <a href="/contact.html"
-            style="display:inline-block;background:#F2521B;color:#fff;padding:0.7rem 1.75rem;border-radius:6px;text-decoration:none;font-weight:700;font-size:0.9rem;transition:opacity 0.2s;"
+            style="display:inline-block;background:#F2521B;color:#fff;padding:0.7rem 1.75rem;border-radius:6px;text-decoration:none;font-weight:700;font-size:1.2rem;transition:opacity 0.2s;"
             onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
             לפרטים ויצירת קשר
           </a>

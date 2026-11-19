@@ -14,7 +14,7 @@ export function createNavbar(): string {
     </style>
     <!-- כפתור דלג לתוכן -->
     <a href="#main-content"
-      style="position:fixed;top:-100px;right:1rem;z-index:9999;background:#F2521B;color:#fff;padding:0.6rem 1.2rem;border-radius:0 0 8px 8px;font-family:'Rubik',sans-serif;font-weight:700;font-size:0.9rem;text-decoration:none;transition:top 0.2s;"
+      style="position:fixed;top:-100px;right:1rem;z-index:9999;background:#F2521B;color:#fff;padding:0.6rem 1.2rem;border-radius:0 0 8px 8px;font-family:'Rubik',sans-serif;font-weight:700;font-size:1.2rem;text-decoration:none;transition:top 0.2s;"
       onfocus="this.style.top='0'" onblur="this.style.top='-100px'">
       דלג לתוכן הראשי
     </a>

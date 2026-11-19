@@ -202,7 +202,7 @@ export function createAboutPage(): string {
           צרו קשר עוד היום ונשמח לעמוד לרשותכם.
         </p>
         <a href="/contact.html"
-          style="background:#F2521B;color:white;padding:1rem 2.5rem;font-family:'Rubik',sans-serif;font-weight:700;font-size:0.95rem;text-transform:uppercase;letter-spacing:0.06em;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;"
+          style="background:#F2521B;color:white;padding:1rem 2.5rem;font-family:'Rubik',sans-serif;font-weight:700;font-size:1.2rem;text-transform:uppercase;letter-spacing:0.06em;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;"
           onmouseover="this.style.background='#d4511a'"
           onmouseout="this.style.background='#F2521B'">
           צור קשר

@@ -183,7 +183,7 @@ function renderProductCard(product: Product, index: number): string {
           ${product.tags.map(t => `<span style="background:#f5f5f5;color:#777;font-size:0.72rem;padding:0.2rem 0.55rem;border-radius:4px;">${t}</span>`).join('')}
         </div>
         <a href="/contact.html"
-          style="display:block;text-align:center;margin-top:auto;background:#F2521B;color:#fff;padding:0.6rem 1rem;border-radius:6px;text-decoration:none;font-weight:700;font-size:0.85rem;transition:opacity 0.2s;"
+          style="display:block;text-align:center;margin-top:auto;background:#F2521B;color:#fff;padding:0.6rem 1rem;border-radius:6px;text-decoration:none;font-weight:700;font-size:1.2rem;transition:opacity 0.2s;"
           onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
           לפרטים ומחיר
         </a>
@@ -257,7 +257,7 @@ export function createSafetyCatalog(): string {
           יש לנו מגוון נוסף — צרו קשר ונמצא עבורכם את הפתרון המתאים.
         </p>
         <a href="/contact.html"
-          style="display:inline-block;background:#F2521B;color:#fff;padding:0.85rem 2rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:1rem;">
+          style="display:inline-block;background:#F2521B;color:#fff;padding:0.85rem 2rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:1.2rem;">
           צרו קשר
         </a>
       </div>

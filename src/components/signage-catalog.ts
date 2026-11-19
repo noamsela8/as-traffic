@@ -63,7 +63,7 @@ function renderCategoryCard(cat: CategoryCard): string {
         <h3 style="font-family:'Rubik',sans-serif;font-size:1.4rem;font-weight:900;color:#272424;margin:0 0 0.6rem;">${cat.name}</h3>
         <p style="color:#555;font-size:0.92rem;line-height:1.7;margin:0 0 1.25rem;flex:1;">${cat.description}</p>
         <a href="/contact.html"
-          style="display:block;text-align:center;background:#F2521B;color:#fff;padding:0.7rem 1rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:0.9rem;transition:opacity 0.2s;margin-top:auto;"
+          style="display:block;text-align:center;background:#F2521B;color:#fff;padding:0.7rem 1rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:1.2rem;transition:opacity 0.2s;margin-top:auto;"
           onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
           לפרטים ומחיר
         </a>
@@ -232,7 +232,7 @@ export function createSignageCatalog(): string {
           נתכנן ונייצר עבורכם פתרון שילוט מקצועי ומותאם לצרכים שלכם.
         </p>
         <a href="/contact.html"
-          style="display:inline-block;background:#F2521B;color:#fff;padding:0.85rem 2rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:1rem;">
+          style="display:inline-block;background:#F2521B;color:#fff;padding:0.85rem 2rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:1.2rem;">
           צרו קשר
         </a>
       </div>

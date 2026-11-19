@@ -174,7 +174,7 @@ function renderJob(job: Job, index: number): string {
           <!-- כפתור שליחת קורות חיים -->
           <a href="mailto:info@as-traffic.co.il?subject=מועמדות לתפקיד: ${job.title}"
             aria-label="שלחו קורות חיים לתפקיד ${job.title}"
-            style="display:inline-block;background:#F2521B;color:#fff;padding:0.75rem 2rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:0.95rem;transition:opacity 0.2s;"
+            style="display:inline-block;background:#F2521B;color:#fff;padding:0.75rem 2rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:1.2rem;transition:opacity 0.2s;"
             onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
             שלחו קורות חיים
           </a>
@@ -243,7 +243,7 @@ export function createCareersPage(): string {
         </p>
         <a href="mailto:info@as-traffic.co.il?subject=הגשת מועמדות כללית"
           aria-label="שלחו קורות חיים — הגשת מועמדות כללית"
-          style="display:inline-block;background:#F2521B;color:#fff;padding:0.85rem 2.25rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:1rem;transition:opacity 0.2s;"
+          style="display:inline-block;background:#F2521B;color:#fff;padding:0.85rem 2.25rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:1.2rem;transition:opacity 0.2s;"
           onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
           שלחו קורות חיים
         </a>

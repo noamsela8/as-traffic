@@ -212,21 +212,21 @@ export function createServicesPage(): string {
         </ul>
         ${s.closing ? `<p style="color:#555;line-height:1.75;margin:0;font-style:italic;">${s.closing}</p>` : ''}
         <div class="svc-btn-wrap" style="display:flex;flex-wrap:wrap;gap:0.75rem;align-items:center;">
-          <a href="/contact.html" class="svc-btn-primary" style="display:inline-block;background:#F2521B;color:#fff;padding:0.75rem 2rem;border-radius:6px;text-decoration:none;font-weight:700;font-size:0.95rem;transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
+          <a href="/contact.html" class="svc-btn-primary" style="display:inline-block;background:#F2521B;color:#fff;padding:0.75rem 2rem;border-radius:6px;text-decoration:none;font-weight:700;font-size:1.2rem;transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
             לפרטים נוספים וצור קשר
           </a>
           ${s.id === 'marking' ? `
-          <a href="/marking.html" class="svc-btn-secondary" style="display:inline-flex;align-items:center;gap:0.5rem;background:transparent;color:#F2521B;padding:0.75rem 1.5rem;border-radius:6px;text-decoration:none;font-weight:700;font-size:0.95rem;border:2px solid #F2521B;transition:all 0.2s;" onmouseover="this.style.background='#F2521B';this.style.color='#fff';" onmouseout="this.style.background='transparent';this.style.color='#F2521B';">
+          <a href="/marking.html" class="svc-btn-secondary" style="display:inline-flex;align-items:center;gap:0.5rem;background:transparent;color:#F2521B;padding:0.75rem 1.5rem;border-radius:6px;text-decoration:none;font-weight:700;font-size:1.2rem;border:2px solid #F2521B;transition:all 0.2s;" onmouseover="this.style.background='#F2521B';this.style.color='#fff';" onmouseout="this.style.background='transparent';this.style.color='#F2521B';">
             לכל סוגי עבודות הצבע
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M15 18l-6-6 6-6"/></svg>
           </a>` : ''}
           ${s.id === 'signage' ? `
-          <a href="/signage-catalog.html" class="svc-btn-secondary" style="display:inline-flex;align-items:center;gap:0.5rem;background:transparent;color:#F2521B;padding:0.75rem 1.5rem;border-radius:6px;text-decoration:none;font-weight:700;font-size:0.95rem;border:2px solid #F2521B;transition:all 0.2s;" onmouseover="this.style.background='#F2521B';this.style.color='#fff';" onmouseout="this.style.background='transparent';this.style.color='#F2521B';">
+          <a href="/signage-catalog.html" class="svc-btn-secondary" style="display:inline-flex;align-items:center;gap:0.5rem;background:transparent;color:#F2521B;padding:0.75rem 1.5rem;border-radius:6px;text-decoration:none;font-weight:700;font-size:1.2rem;border:2px solid #F2521B;transition:all 0.2s;" onmouseover="this.style.background='#F2521B';this.style.color='#fff';" onmouseout="this.style.background='transparent';this.style.color='#F2521B';">
             לקטלוג השילוט והתמרורים
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M15 18l-6-6 6-6"/></svg>
           </a>` : ''}
           ${s.id === 'safety' ? `
-          <a href="/safety-catalog.html" class="svc-btn-secondary" style="display:inline-flex;align-items:center;gap:0.5rem;background:transparent;color:#F2521B;padding:0.75rem 1.5rem;border-radius:6px;text-decoration:none;font-weight:700;font-size:0.95rem;border:2px solid #F2521B;transition:all 0.2s;" onmouseover="this.style.background='#F2521B';this.style.color='#fff';" onmouseout="this.style.background='transparent';this.style.color='#F2521B';">
+          <a href="/safety-catalog.html" class="svc-btn-secondary" style="display:inline-flex;align-items:center;gap:0.5rem;background:transparent;color:#F2521B;padding:0.75rem 1.5rem;border-radius:6px;text-decoration:none;font-weight:700;font-size:1.2rem;border:2px solid #F2521B;transition:all 0.2s;" onmouseover="this.style.background='#F2521B';this.style.color='#fff';" onmouseout="this.style.background='transparent';this.style.color='#F2521B';">
             לקטלוג אביזרי הבטיחות
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M15 18l-6-6 6-6"/></svg>
           </a>` : ''}
