@@ -266,7 +266,7 @@ export function createContactPage(): string {
               </div>
               <div>
                 <div style="font-family: 'Rubik', sans-serif; font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-bottom: 3px;">טלפון</div>
-                <a href="tel:0894700053" aria-label="התקשר אלינו: 08-9470053" style="
+                <a href="tel:08-9470053" aria-label="התקשר אלינו: 08-9470053" style="
                   font-family: 'Rubik', sans-serif; font-size: 1.1rem; font-weight: 600;
                   color: #fff; text-decoration: none; direction: ltr; display: block;
                 ">08-9470053</a>
@@ -334,7 +334,7 @@ export function createContactPage(): string {
             font-size: 1rem; color: #272424; margin: 0 0 20px;
           ">פנייה מהירה</h2>
           <div style="display: flex; flex-direction: column; gap: 12px;">
-            <a href="tel:0894700053" aria-label="התקשר אלינו: 08-9470053" style="
+            <a href="tel:08-9470053" aria-label="התקשר אלינו: 08-9470053" style="
               display: flex; align-items: center; justify-content: center; gap: 10px;
               background: #272424; color: #fff;
               border-radius: 12px; padding: 14px 20px;
