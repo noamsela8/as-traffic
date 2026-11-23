@@ -59,7 +59,7 @@ export function createHero(): string {
             </a>
 
             <a href="/services.html"
-              style="background:transparent;color:white;padding:0.875rem 2rem;font-family:'Rubik',sans-serif;font-weight:600;font-size:0.9rem;text-transform:uppercase;letter-spacing:0.06em;text-decoration:none;border:2px solid rgba(255,255,255,0.5);display:inline-flex;align-items:center;gap:0.5rem;"
+              style="background:transparent;color:white;padding:0.875rem 2rem;font-family:'Rubik',sans-serif;font-weight:600;font-size:1.2rem;text-transform:uppercase;letter-spacing:0.06em;text-decoration:none;border:2px solid rgba(255,255,255,0.5);display:inline-flex;align-items:center;gap:0.5rem;"
               onmouseover="this.style.borderColor='#F2521B';this.style.color='#F2521B'"
               onmouseout="this.style.borderColor='rgba(255,255,255,0.5)';this.style.color='white'">
               השירותים שלנו
