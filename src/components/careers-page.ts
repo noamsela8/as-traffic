@@ -222,7 +222,7 @@ export function createCareersPage(): string {
           <h2 style="font-family:'Rubik',sans-serif;font-size:1.5rem;font-weight:800;color:#272424;margin:0 0 0.4rem;">
             משרות פתוחות
           </h2>
-          <p style="color:#888;font-size:0.9rem;margin:0;">לחצו על משרה לפרטים נוספים</p>
+          <p style="color:#767676;font-size:0.9rem;margin:0;">לחצו על משרה לפרטים נוספים</p>
         </div>
 
         <!-- רשימת משרות -->

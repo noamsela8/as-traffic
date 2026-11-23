@@ -196,7 +196,7 @@ export function createContactPage(): string {
           </div>
 
           <!-- Privacy notice -->
-          <p style="font-size:0.82rem;color:#888;margin:0 0 1rem;line-height:1.6;">
+          <p style="font-size:0.82rem;color:#767676;margin:0 0 1rem;line-height:1.6;">
             שליחת הטופס מהווה פנייה לחברה לצורך טיפול בבקשתך ויצירת קשר עמך. הפרטים שתמסור יועברו אלינו באמצעות Web3Forms. מסירת הפרטים תלויה ברצונך, אך ללא פרטי הקשר הנדרשים לא נוכל להשיב לפנייתך. למידע נוסף ראה <a href="/privacy.html" style="color:#F2521B;text-decoration:underline;">מדיניות הפרטיות</a>.
           </p>
 
