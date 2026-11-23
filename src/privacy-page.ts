@@ -75,8 +75,8 @@ const content = `
       <div style="background:#fff;border-radius:12px;padding:2.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.06);margin-bottom:1.5rem;">
         <h2 style="font-family:'Rubik',sans-serif;font-size:1.2rem;font-weight:800;color:#272424;margin:0 0 1rem;">5. משך שמירת המידע</h2>
         <ul style="color:#555;line-height:2;margin:0 0 0.75rem;padding-right:1.5rem;">
-          <li><strong>פניות דרך טופס הקשר:</strong> נשמרות עד 3 שנים ממועד הפנייה, או עד לסיום הטיפול בה, לפי המאוחר.</li>
-          <li><strong>מועמדויות לעבודה:</strong> קורות חיים ופרטי מועמד נשמרים לתקופה הנדרשת לצורך בחינת המועמדות. לאחר סיום הליך הגיוס, המידע נמחק אלא אם ניתנה הסכמה מפורשת של המועמד לשמירה לצורך הצעות עבודה עתידיות.</li>
+          <li><strong>פניות דרך טופס הקשר:</strong> נשמרות לתקופה הנדרשת לטיפול בפנייה ולמטרות חוקיות רלוונטיות, ולא יותר מכך.</li>
+          <li><strong>מועמדויות לעבודה:</strong> קורות חיים ופרטי מועמד נמחקים לאחר סיום הליך הגיוס הרלוונטי.</li>
           <li><strong>יומני גישה (logs):</strong> נשמרים על ידי ספק האחסון Vercel בהתאם למדיניות הפרטיות שלהם. תקופת שמירת היומנים נקבעת על ידי Vercel ועשויה להשתנות בהתאם לתנאי השירות שלהם.</li>
         </ul>
         <p style="color:#555;line-height:1.8;margin:0;">

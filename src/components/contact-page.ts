@@ -197,7 +197,7 @@ export function createContactPage(): string {
 
           <!-- Privacy notice -->
           <p style="font-size:0.82rem;color:#666;margin:0 0 1rem;line-height:1.6;">
-            בשליחת הטופס אתה מסכים ל<a href="/privacy.html" style="color:#F2521B;text-decoration:underline;">מדיניות הפרטיות</a> שלנו. פנייתך תועבר אלינו באמצעות Web3Forms.
+            שליחת הטופס מהווה פנייה לחברה לצורך טיפול בבקשתך ויצירת קשר עמך. הפרטים שתמסור יועברו אלינו באמצעות Web3Forms. מסירת הפרטים תלויה ברצונך, אך ללא פרטי הקשר הנדרשים לא נוכל להשיב לפנייתך. למידע נוסף ראה <a href="/privacy.html" style="color:#F2521B;text-decoration:underline;">מדיניות הפרטיות</a>.
           </p>
 
           <!-- Submit button -->
