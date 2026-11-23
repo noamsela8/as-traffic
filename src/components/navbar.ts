@@ -41,7 +41,7 @@ export function createNavbar(): string {
 
         <!-- טלפון + צור קשר — בצד שמאל -->
         <div class="hidden md:flex items-center gap-2" style="margin-inline-start:auto;">
-          <a href="tel:0894700053"
+          <a href="tel:08-9470053"
             aria-label="התקשר אלינו: 08-9470053"
             style="display:flex;align-items:center;gap:0.4rem;color:rgba(255,255,255,0.75);font-size:0.875rem;font-weight:500;text-decoration:none;transition:color 0.2s;"
             onmouseover="this.style.color='#F2521B'"

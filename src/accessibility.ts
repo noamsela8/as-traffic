@@ -56,7 +56,7 @@ const content = `
         <address style="font-style:normal;display:flex;flex-direction:column;gap:0.6rem;">
           <p style="color:#555;margin:0;">
             <strong>טלפון:</strong>
-            <a href="tel:0894700053" style="color:#F2521B;font-weight:700;text-decoration:none;margin-right:0.4rem;">08-9470053</a>
+            <a href="tel:08-9470053" style="color:#F2521B;font-weight:700;text-decoration:none;margin-right:0.4rem;">08-9470053</a>
           </p>
           <p style="color:#555;margin:0;">
             <strong>דוא"ל:</strong>

@@ -126,7 +126,7 @@ const content = `
           </p>
           <p style="color:#555;margin:0.3rem 0;">
             <strong>טלפון:</strong>
-            <a href="tel:0894700053" style="color:#F2521B;font-weight:700;text-decoration:none;margin-right:0.4rem;">08-9470053</a>
+            <a href="tel:08-9470053" style="color:#F2521B;font-weight:700;text-decoration:none;margin-right:0.4rem;">08-9470053</a>
           </p>
           <p style="color:#555;margin:0.3rem 0;"><strong>שעות מענה:</strong> ימים א'–ה', 08:00–17:00</p>
         </address>

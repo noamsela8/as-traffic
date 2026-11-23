@@ -29,7 +29,7 @@ export function createContactPage(): string {
       ">נשמח לשמוע מכם</h1>
       <p style="
         font-family: 'Rubik', sans-serif; font-size: 1.15rem;
-        color: rgba(255,255,255,0.8); margin: 0; line-height: 1.7;
+        color: rgba(255,255,255,0.65); margin: 0; line-height: 1.7;
       ">בין אם יש לכם שאלה, בקשת הצעת מחיר, או שאתם מעוניינים לשמוע עוד על השירותים שלנו — אנחנו כאן.</p>
     </div>
   </section>
@@ -55,7 +55,7 @@ export function createContactPage(): string {
           font-size: 1.5rem; color: #272424; margin: 0 0 8px;
         ">שלחו לנו הודעה</h2>
         <p style="
-          font-family: 'Rubik', sans-serif; color: #666;
+          font-family: 'Rubik', sans-serif; color: #888;
           font-size: 0.95rem; margin: 0 0 36px;
         " id="form-desc">נחזור אליכם בהקדם האפשרי. שדות המסומנים ב-* הם שדות חובה.</p>
 
@@ -196,7 +196,7 @@ export function createContactPage(): string {
           </div>
 
           <!-- Privacy notice -->
-          <p style="font-size:0.82rem;color:#666;margin:0 0 1rem;line-height:1.6;">
+          <p style="font-size:0.82rem;color:#888;margin:0 0 1rem;line-height:1.6;">
             שליחת הטופס מהווה פנייה לחברה לצורך טיפול בבקשתך ויצירת קשר עמך. הפרטים שתמסור יועברו אלינו באמצעות Web3Forms. מסירת הפרטים תלויה ברצונך, אך ללא פרטי הקשר הנדרשים לא נוכל להשיב לפנייתך. למידע נוסף ראה <a href="/privacy.html" style="color:#F2521B;text-decoration:underline;">מדיניות הפרטיות</a>.
           </p>
 
@@ -302,7 +302,7 @@ export function createContactPage(): string {
               </div>
               <div>
                 <div style="font-family: 'Rubik', sans-serif; font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-bottom: 3px;">כתובת</div>
-                <span style="font-family: 'Rubik', sans-serif; font-size: 1rem; font-weight: 600; color: #fff;">בית עוזיאל</span>
+                <span style="font-family: 'Rubik', sans-serif; font-size: 1rem; font-weight: 600; color: #fff;">המייסדים 30, בית עוזיאל</span>
               </div>
             </div>
 
